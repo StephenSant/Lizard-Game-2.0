@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         if (collision.GetComponent<Bug>() != null)
         {
             Bug bug = collision.GetComponent<Bug>();
-            gm.score += bug.pointsToGive;
+            //gm.score += bug.pointsToGive;
             Destroy(bug.gameObject);
         }
     }

@@ -2,51 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bug : MonoBehaviour
+public class Bug : MonoBehaviour
 {
     public float moveSpeed;
-    public int pointsToGive;
-    public Transform waypointParent;
-    List<Transform> waypoints = new List<Transform>();
-    int waypointIndex = 0;
+    public float rotSpeed;
+    public float wallSensorLength = 1;
+    public float wallSensorSeperation = 0.1f;
+    public LayerMask hitLayer;
+
+    RaycastHit2D hitRight, hitLeft;
     Rigidbody2D rigid;
+
+
     private void Awake()
     {
-        for (int i = 0; i < waypointParent.childCount; i++)
-        {
-            waypoints.Add(waypointParent.GetChild(i).transform);
-        }
         rigid = GetComponent<Rigidbody2D>();
+    }
+    void FixedUpdate()
+    {
+        Debug.DrawRay(transform.position, new Vector2(wallSensorSeperation,1), Color.red);
+        Debug.DrawRay(transform.position, new Vector2(-wallSensorSeperation, 1), Color.red);
+        hitRight = Physics2D.Raycast(transform.position, new Vector2(wallSensorSeperation, 1), wallSensorLength, hitLayer);
+        hitLeft = Physics2D.Raycast(transform.position, new Vector2(-wallSensorSeperation, 1), wallSensorLength, hitLayer);
+
+
     }
     private void Update()
     {
-        rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
-        Vector2 curWaypoint = waypoints[waypointIndex].position;
-        if (Vector2.Distance(transform.position, curWaypoint) < 1f)
+        if (hitRight.collider != null && hitLeft.collider != null)
         {
-            if (waypointIndex < waypoints.Count - 1)
-            {
-                waypointIndex++;
-            }
-            else
-            {
-                waypointIndex = 0;
-            }
+            transform.Rotate(Vector3.forward);
         }
-        transform.rotation = RotateTowards(curWaypoint);
-    }
-    Quaternion RotateTowards(Vector3 target, float rotationSpeed)
-    {
-        Vector2 dir = target - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion rot = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        return Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
-    }
-    Quaternion RotateTowards(Vector3 target)
-    {
-        Vector2 dir = target - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion rot = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        return rot;
+        else if (hitRight.collider != null)
+        {
+            Debug.Log("Right");
+            rigid.velocity = transform.up;
+            transform.Rotate(Vector3.forward);
+        }
+        else if (hitLeft.collider != null)
+        {
+            Debug.Log("Left");
+            rigid.velocity = transform.up;
+            transform.Rotate(-Vector3.forward);
+        }
+        else
+        {
+            rigid.velocity = transform.up;
+        }
     }
 }

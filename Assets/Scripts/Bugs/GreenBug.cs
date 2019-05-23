@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenBug : Bug
+public class GreenBug : MonoBehaviour
 {
 
 }
