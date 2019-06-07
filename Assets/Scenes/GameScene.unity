@@ -783,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 8756512166429174768, guid: c45941dcf406337499407337207f2dd1,
         type: 3}
       propertyPath: m_Name
-      value: Bug
+      value: Beetle
       objectReference: {fileID: 0}
     - target: {fileID: 8756512166429174766, guid: c45941dcf406337499407337207f2dd1,
         type: 3}

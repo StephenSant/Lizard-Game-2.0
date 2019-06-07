@@ -23,11 +23,11 @@ public class Bug : MonoBehaviour
     {
         if (wallSensorSeperation != leftWallSensor.localEulerAngles.z || wallSensorSeperation != -rightWallSensor.localEulerAngles.z)
         {
-             leftWallSensor.localEulerAngles = Vector3.forward * wallSensorSeperation;
-             rightWallSensor.localEulerAngles = Vector3.forward * -wallSensorSeperation;
+            leftWallSensor.localEulerAngles = Vector3.forward * wallSensorSeperation;
+            rightWallSensor.localEulerAngles = Vector3.forward * -wallSensorSeperation;
         }
 
-        Debug.DrawRay(transform.position, rightWallSensor.transform.up*wallSensorLength, Color.red);
+        Debug.DrawRay(transform.position, rightWallSensor.transform.up * wallSensorLength, Color.red);
         Debug.DrawRay(transform.position, leftWallSensor.transform.up * wallSensorLength, Color.red);
         hitRight = Physics2D.Raycast(transform.position, rightWallSensor.transform.up, wallSensorLength, hitLayer);
         hitLeft = Physics2D.Raycast(transform.position, leftWallSensor.transform.up, wallSensorLength, hitLayer);
@@ -40,17 +40,17 @@ public class Bug : MonoBehaviour
         }
         else if (hitRight)
         {
-            rigid.velocity = transform.up * Time.deltaTime;
+            rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
             transform.Rotate(Vector3.forward);
         }
         else if (hitLeft)
         {
-            rigid.velocity = transform.up*Time.deltaTime;
+            rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
             transform.Rotate(-Vector3.forward);
         }
         else
         {
-            rigid.velocity = transform.up;
+            rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
         }
     }
 
