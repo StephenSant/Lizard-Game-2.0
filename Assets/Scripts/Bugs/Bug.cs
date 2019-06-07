@@ -7,10 +7,11 @@ public class Bug : MonoBehaviour
     public float moveSpeed;
     public float rotSpeed;
     public float wallSensorLength = 1;
-    public float wallSensorSeperation = 0.1f;
+    public float wallSensorSeperation = 1;
     public LayerMask hitLayer;
+    public Transform rightWallSensor, leftWallSensor;
 
-    RaycastHit2D hitRight, hitLeft;
+    public bool hitRight, hitLeft;
     Rigidbody2D rigid;
 
 
@@ -20,29 +21,31 @@ public class Bug : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Debug.DrawRay(transform.position, new Vector2(wallSensorSeperation,1), Color.red);
-        Debug.DrawRay(transform.position, new Vector2(-wallSensorSeperation, 1), Color.red);
-        hitRight = Physics2D.Raycast(transform.position, new Vector2(wallSensorSeperation, 1), wallSensorLength, hitLayer);
-        hitLeft = Physics2D.Raycast(transform.position, new Vector2(-wallSensorSeperation, 1), wallSensorLength, hitLayer);
+        if (wallSensorSeperation != leftWallSensor.localEulerAngles.z || wallSensorSeperation != -rightWallSensor.localEulerAngles.z)
+        {
+             leftWallSensor.localEulerAngles = Vector3.forward * wallSensorSeperation;
+             rightWallSensor.localEulerAngles = Vector3.forward * -wallSensorSeperation;
+        }
 
-
+        Debug.DrawRay(transform.position, rightWallSensor.transform.up*wallSensorLength, Color.red);
+        Debug.DrawRay(transform.position, leftWallSensor.transform.up * wallSensorLength, Color.red);
+        hitRight = Physics2D.Raycast(transform.position, rightWallSensor.transform.up, wallSensorLength, hitLayer);
+        hitLeft = Physics2D.Raycast(transform.position, leftWallSensor.transform.up, wallSensorLength, hitLayer);
     }
     private void Update()
     {
-        if (hitRight.collider != null && hitLeft.collider != null)
+        if (hitRight && hitLeft)
         {
             transform.Rotate(Vector3.forward);
         }
-        else if (hitRight.collider != null)
+        else if (hitRight)
         {
-            Debug.Log("Right");
-            rigid.velocity = transform.up;
+            rigid.velocity = transform.up * Time.deltaTime;
             transform.Rotate(Vector3.forward);
         }
-        else if (hitLeft.collider != null)
+        else if (hitLeft)
         {
-            Debug.Log("Left");
-            rigid.velocity = transform.up;
+            rigid.velocity = transform.up*Time.deltaTime;
             transform.Rotate(-Vector3.forward);
         }
         else
@@ -50,4 +53,5 @@ public class Bug : MonoBehaviour
             rigid.velocity = transform.up;
         }
     }
+
 }
