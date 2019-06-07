@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public int score;
     public bool gameOver;
+    public Transform bugSpawnerParent;
+
+    public Transform[] bugSpawners;
 
     public static GameManager instance = null;
 
@@ -19,8 +22,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
 
+        for (int i = 0; i < bugSpawners.Length; i++)
+        {
+            bugSpawners[i] = bugSpawnerParent.GetChild(i);
+        }
         StartGame();
     }
     void StartGame()
