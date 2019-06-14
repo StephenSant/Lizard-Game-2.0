@@ -11,17 +11,22 @@ public class Bird : MonoBehaviour
 
     Rigidbody2D rigid;
 
+    GameManager gm;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
     }
-
+    private void Start()
+    {
+        gm = GameManager.instance;
+    }
     void Update()
     {
         if (player != null)
         {
-            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
-            transform.rotation = RotateTowards(player.position, rotSpeed);
+            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * (gm.score+50));
+            transform.rotation = RotateTowards(player.position, rotSpeed + gm.score);
         }
         else
         {

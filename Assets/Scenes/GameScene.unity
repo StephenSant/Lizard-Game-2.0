@@ -1053,5 +1053,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1983477818}
+    - target: {fileID: 8850818433071633647, guid: 1540938f45d7e0941bd2d2a753e750f7,
+        type: 3}
+      propertyPath: rotSpeed
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1540938f45d7e0941bd2d2a753e750f7, type: 3}
