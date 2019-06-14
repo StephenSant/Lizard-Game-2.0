@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public int score;
     public bool gameOver;
-    public Transform bugSpawnerParent;
-
-    public Transform[] bugSpawners;
 
     public static GameManager instance = null;
+
+    public EnvironmentGenerator environmentGenerator;
+    public BugSpawner bugSpawner;
+
+    public Text scoreText;
 
     void Awake()
     {
@@ -23,15 +26,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        for (int i = 0; i < bugSpawners.Length; i++)
-        {
-            bugSpawners[i] = bugSpawnerParent.GetChild(i);
-        }
-        StartGame();
+        environmentGenerator = GetComponent<EnvironmentGenerator>();
+        bugSpawner = GetComponent<BugSpawner>();
+        environmentGenerator.PlaceObsticals();
     }
-    void StartGame()
+
+
+    private void Start()
     {
-
+        bugSpawner.isSpawning(true);
     }
 
+    private void Update()
+    {
+        scoreText.text = "Score: " + score;
+    }
 }

@@ -18,8 +18,15 @@ public class Bird : MonoBehaviour
 
     void Update()
     {
-        rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
-        transform.rotation = RotateTowards(player.position,rotSpeed);
+        if (player != null)
+        {
+            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
+            transform.rotation = RotateTowards(player.position, rotSpeed);
+        }
+        else
+        {
+            rigid.velocity = Vector2.zero;
+        }
     }
 
     Quaternion RotateTowards(Vector3 target, float rotationSpeed)

@@ -16,9 +16,14 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        gm = GameManager.instance;
+        
         rigid = GetComponent<Rigidbody2D>();
         curBoost = maxBoost;
+    }
+
+    private void Start()
+    {
+        gm = GameManager.instance;
     }
 
     void Update()
@@ -96,13 +101,17 @@ public class Player : MonoBehaviour
             transform.Rotate(0, 0, (-rotSpeed * 100) * Time.deltaTime, Space.Self);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.GetComponent<Bug>() != null)
+        if (other.CompareTag("Bug"))
         {
-            Bug bug = collision.GetComponent<Bug>();
-            //gm.score += bug.pointsToGive;
-            Destroy(bug.gameObject);
+            Bug bug = other.GetComponent<Bug>();
+            gm.score += bug.pointsToGive;
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Bird"))
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -14,6 +14,7 @@ public class Bug : MonoBehaviour
     public bool hitRight, hitLeft;
     Rigidbody2D rigid;
 
+    public int pointsToGive = 1;
 
     private void Awake()
     {
@@ -34,24 +35,33 @@ public class Bug : MonoBehaviour
     }
     private void Update()
     {
+        #region Sensors
         if (hitRight && hitLeft)
         {
-            transform.Rotate(Vector3.forward);
+            rigid.velocity = Vector2.zero;
+            transform.Rotate(Vector3.forward * rotSpeed);
         }
-        else if (hitRight)
+        else if (hitRight && !hitLeft)
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.forward );
         }
-        else if (hitLeft)
+        else if (hitLeft && !hitRight)
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(-Vector3.forward);
+            transform.Rotate(-Vector3.forward );
         }
         else
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
         }
+        #endregion
+        #region Destory Off Screen
+        if (transform.position.x > 12 || transform.position.y > 12 || transform.position.x < -12 || transform.position.y < -12)
+        {
+            Destroy(gameObject);
+        }
+        #endregion
     }
 
 }

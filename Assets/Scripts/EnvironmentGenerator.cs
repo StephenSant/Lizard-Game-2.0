@@ -10,7 +10,7 @@ public class EnvironmentGenerator : MonoBehaviour
     int squareIndex;
     //game size 18 x 10
     Vector2[] spaces = new Vector2[18 * 10];
-    void Start()
+    public void PlaceObsticals()
     {
 
         for (int x = 0; x < 18; x++)
@@ -31,6 +31,6 @@ public class EnvironmentGenerator : MonoBehaviour
 
     void CreateObject(Vector2 gridSpace)
     {
-        Instantiate(obstical, gridSpace + new Vector2(-8.5f, -4.5f), transform.rotation);
+        Instantiate(obstical, gridSpace + new Vector2(-8.5f, -4.5f), transform.rotation,transform);
     }
 }
