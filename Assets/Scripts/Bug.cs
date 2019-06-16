@@ -22,6 +22,7 @@ public class Bug : MonoBehaviour
     }
     void FixedUpdate()
     {
+        #region Sensors
         if (wallSensorSeperation != leftWallSensor.localEulerAngles.z || wallSensorSeperation != -rightWallSensor.localEulerAngles.z)
         {
             leftWallSensor.localEulerAngles = Vector3.forward * wallSensorSeperation;
@@ -32,10 +33,11 @@ public class Bug : MonoBehaviour
         Debug.DrawRay(transform.position, leftWallSensor.transform.up * wallSensorLength, Color.red);
         hitRight = Physics2D.Raycast(transform.position, rightWallSensor.transform.up, wallSensorLength, hitLayer);
         hitLeft = Physics2D.Raycast(transform.position, leftWallSensor.transform.up, wallSensorLength, hitLayer);
+        #endregion
     }
     private void Update()
     {
-        #region Sensors
+        
         if (hitRight && hitLeft)
         {
             rigid.velocity = Vector2.zero;
@@ -44,18 +46,18 @@ public class Bug : MonoBehaviour
         else if (hitRight && !hitLeft)
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(Vector3.forward );
+            transform.Rotate(Vector3.forward * rotSpeed);
         }
         else if (hitLeft && !hitRight)
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(-Vector3.forward );
+            transform.Rotate(-Vector3.forward * rotSpeed);
         }
         else
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
         }
-        #endregion
+        
         #region Destory Off Screen
         if (transform.position.x > 12 || transform.position.y > 12 || transform.position.x < -12 || transform.position.y < -12)
         {

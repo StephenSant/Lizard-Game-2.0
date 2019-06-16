@@ -111,6 +111,7 @@ public class Player : MonoBehaviour
         }
         if (other.CompareTag("Bird"))
         {
+            gm.GameOver();
             Destroy(gameObject);
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,10 +9,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
 
+    public UIManager uIManager;
     public EnvironmentGenerator environmentGenerator;
     public BugSpawner bugSpawner;
-
-    public Text scoreText;
 
     void Awake()
     {
@@ -26,19 +24,31 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        uIManager = GetComponent<UIManager>();
         environmentGenerator = GetComponent<EnvironmentGenerator>();
         bugSpawner = GetComponent<BugSpawner>();
-        environmentGenerator.PlaceObsticals();
     }
 
 
     private void Start()
     {
+        environmentGenerator.PlaceObsticals();
         bugSpawner.isSpawning(true);
     }
 
     private void Update()
     {
-        scoreText.text = "Score: " + score;
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            uIManager.TogglePause();
+        }
     }
+
+    public void GameOver()
+    {
+        gameOver = true;
+        uIManager.OpenGameOverPanel(true);
+    }
+
+    
 }

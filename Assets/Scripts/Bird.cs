@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    public float moveSpeed;
-    public float rotSpeed;
+    public float moveSpeedMultiplyer = 10;
+    public float rotSpeed = 0.1f;
 
     public Transform player;
 
@@ -25,8 +25,8 @@ public class Bird : MonoBehaviour
     {
         if (player != null)
         {
-            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * (gm.score+50));
-            transform.rotation = RotateTowards(player.position, rotSpeed + gm.score);
+            rigid.velocity = transform.up * (gm.score * moveSpeedMultiplyer) * Time.deltaTime;
+            transform.rotation = RotateTowards(player.position, rotSpeed * gm.score);
         }
         else
         {
