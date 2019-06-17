@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class UIManager : MonoBehaviour
     }
 
     bool paused;
-    public bool TogglePause()
+    public void TogglePause()
     {
         if (paused)
         {
@@ -30,7 +31,6 @@ public class UIManager : MonoBehaviour
             pausePanel.SetActive(false);
             Time.timeScale = 1;
             paused = false;
-            return false;
         }
         else
         {
@@ -38,7 +38,6 @@ public class UIManager : MonoBehaviour
             pausePanel.SetActive(true);
             Time.timeScale = 0;
             paused = true;
-            return true;
         }
     }
 
@@ -48,5 +47,10 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(openPanel);
         gamePanel.SetActive(!openPanel);
         pausePanel.SetActive(false);
+    }
+
+    public void GoToScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

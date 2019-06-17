@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int score;
+    public int highScore;
     public bool gameOver;
 
     public static GameManager instance = null;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     {
         environmentGenerator.PlaceObsticals();
         bugSpawner.isSpawning(true);
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
     }
+
 
     
 }
