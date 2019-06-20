@@ -54,9 +54,6 @@ public class Player : MonoBehaviour
             curBoost = maxBoost;
             canBoost = true;
         }
-
-
-
         Turn();
     }
     private void Move()

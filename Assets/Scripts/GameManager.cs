@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
 
-    public UIManager uIManager;
-    public EnvironmentGenerator environmentGenerator;
-    public BugSpawner bugSpawner;
+    private UIManager uIManager;
+    private EnvironmentGenerator environmentGenerator;
+    private BugSpawner bugSpawner;
+    private TouchInputs touchInputs;
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
         uIManager = GetComponent<UIManager>();
         environmentGenerator = GetComponent<EnvironmentGenerator>();
         bugSpawner = GetComponent<BugSpawner>();
+        touchInputs = GetComponent<TouchInputs>();
     }
 
 
