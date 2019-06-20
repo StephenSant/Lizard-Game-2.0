@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     GameManager gm;
 
     public Text scoreText;
+    public Slider boostBar;
     public GameObject gamePanel;
     public GameObject pausePanel;
     public GameObject gameOverPanel;
@@ -20,6 +21,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         scoreText.text = "Score: " + gm.score;
+        boostBar.value = gm.boostAmount;
     }
 
     bool paused;

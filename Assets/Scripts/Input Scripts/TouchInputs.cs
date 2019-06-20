@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class TouchInputs : MonoBehaviour
 {
     public VirtualJoystick joystick;
-    public RectTransform boostButton;
 
     public float verticalInput;
     public float horizontalInput;
@@ -18,8 +19,15 @@ public class TouchInputs : MonoBehaviour
         verticalInput = joystick.input.y;
         horizontalInput = joystick.input.x;
     }
-    public void OnPointerDown(PointerEventData eventData)
+
+    //Connect these to a button with the trigger event component
+    public void ActivateBoost()
     {
-        
+        boostActive = true;
     }
+    public void DeactivateBoost()
+    {
+        boostActive = false;
+    }
+
 }

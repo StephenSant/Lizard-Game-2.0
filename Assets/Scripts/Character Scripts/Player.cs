@@ -14,9 +14,11 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     GameManager gm;
 
+
+
     void Awake()
     {
-        
+
         rigid = GetComponent<Rigidbody2D>();
         curBoost = maxBoost;
     }
@@ -28,11 +30,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && canBoost)
+        gm.boostAmount = curBoost;
+        if (gm.boostActive && canBoost)
         {
             canBoost = false;
             boosting = true;
         }
+#if UNITY_EDITOR
+        if (Input.GetKey(KeyCode.Space) && canBoost)
+        {
+            canBoost = false;
+            boosting = true;
+        }
+#endif
         if (boosting)
         {
             Boost();
@@ -47,7 +57,7 @@ public class Player : MonoBehaviour
         }
         if (!boosting && !canBoost)
         {
-            curBoost += Time.deltaTime;
+            curBoost += Time.deltaTime/2;
         }
         if (curBoost >= maxBoost)
         {
@@ -56,39 +66,50 @@ public class Player : MonoBehaviour
         }
         Turn();
     }
-    private void Move()
+    void Move()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * 100);
-        }
-        else
-        {
-            rigid.velocity = Vector2.zero;
-        }
+
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
+        //}
+        //else if (Input.GetKey(KeyCode.S))
+        //{
+        //    rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * 100);
+        //}
+        //else
+        //{
+        //    rigid.velocity = Vector2.zero;
+        //}
+
+
+        rigid.velocity = transform.up * Time.deltaTime * (gm.verticalInput * moveSpeed * 100);
     }
     void Boost()
     {
+
+        //curBoost -= Time.deltaTime;
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * boostMultiplier * 100);
+        //}
+        //else if (Input.GetKey(KeyCode.S))
+        //{
+        //    rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * boostMultiplier * 100);
+        //}
+        //else
+        //{
+        //    rigid.velocity = Vector2.zero;
+        //}
+
         curBoost -= Time.deltaTime;
-        if (Input.GetKey(KeyCode.W))
-        {
-            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * boostMultiplier * 100);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * boostMultiplier * 100);
-        }
-        else
-        {
-            rigid.velocity = Vector2.zero;
-        }
+        rigid.velocity = transform.up * Time.deltaTime * (gm.verticalInput * moveSpeed * boostMultiplier * 100);
+
+
     }
     void Turn()
     {
+
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, 0, (rotSpeed * 100) * Time.deltaTime, Space.Self);
@@ -97,6 +118,8 @@ public class Player : MonoBehaviour
         {
             transform.Rotate(0, 0, (-rotSpeed * 100) * Time.deltaTime, Space.Self);
         }
+
+        transform.Rotate(0, 0, (-rotSpeed * 100 * gm.horizontalInput) * Time.deltaTime, Space.Self);
     }
     void OnTriggerEnter2D(Collider2D other)
     {

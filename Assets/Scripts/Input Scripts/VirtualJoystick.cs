@@ -39,7 +39,6 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     void Start()
     {
-        background.gameObject.SetActive(true);
         HandleRange = handlerRange;
         DeadZone = deadZone;
         baseRect = GetComponent<RectTransform>();
@@ -76,7 +75,7 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
         Vector2 position = RectTransformUtility.WorldToScreenPoint(cam, background.position);
         Vector2 radius = background.sizeDelta / 2;
         input = (eventData.position - position) / (radius * canvas.scaleFactor);
-        HandleIput(input.magnitude, input.normalized);
+        HandleInput(input.magnitude, input.normalized);
         handle.anchoredPosition = input * radius * handlerRange;
     }
 
@@ -92,7 +91,7 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
         handle.anchoredPosition = Vector2.zero;
     }
 
-    void HandleIput(float magnitude, Vector2 normalised)
+    void HandleInput(float magnitude, Vector2 normalised)
     {
         if (magnitude > deadZone)
         {

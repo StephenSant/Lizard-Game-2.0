@@ -8,12 +8,19 @@ public class GameManager : MonoBehaviour
     public int highScore;
     public bool gameOver;
 
+    public float boostAmount;
+
     public static GameManager instance = null;
 
     private UIManager uIManager;
     private EnvironmentGenerator environmentGenerator;
     private BugSpawner bugSpawner;
     private TouchInputs touchInputs;
+
+    public float verticalInput;
+    public float horizontalInput;
+
+    public bool boostActive;
 
     void Awake()
     {
@@ -46,6 +53,9 @@ public class GameManager : MonoBehaviour
         {
             uIManager.TogglePause();
         }
+        boostActive = touchInputs.boostActive;
+        horizontalInput = touchInputs.horizontalInput;
+        verticalInput = touchInputs.verticalInput;
     }
 
     public void GameOver()
