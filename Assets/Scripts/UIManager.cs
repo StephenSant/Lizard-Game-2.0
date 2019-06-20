@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     GameManager gm;
 
     public Text scoreText;
+    public Text finalScoreText;
     public Slider boostBar;
     public GameObject gamePanel;
     public GameObject pausePanel;

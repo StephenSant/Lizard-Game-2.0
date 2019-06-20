@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
+        if (score > highScore) { highScore = score; }
+        uIManager.finalScoreText.text = "Your score: " + score + "\nHigh score: " + highScore;
     }
 
 

@@ -2682,6 +2682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 537842400}
+  finalScoreText: {fileID: 95711328}
   boostBar: {fileID: 682842705}
   gamePanel: {fileID: 432242291}
   pausePanel: {fileID: 896207279}
