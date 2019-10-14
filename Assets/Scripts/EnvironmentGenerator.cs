@@ -8,14 +8,14 @@ public class EnvironmentGenerator : MonoBehaviour
     public GameObject obstical;
 
     int squareIndex;
-    //game size 18 x 10
-    Vector2[] spaces = new Vector2[18 * 10];
+    //game size 18 x 18
+    Vector2[] spaces = new Vector2[17 * 17];
     public void PlaceObsticals()
     {
 
-        for (int x = 0; x < 18; x++)
+        for (int x = 0; x < 17; x++)
         {
-            for (int y = 0; y < 10; y++)
+            for (int y = 0; y < 17; y++)
             {
                 int r = Random.Range(0, 12);
                 //Debug.Log(r);
@@ -31,6 +31,6 @@ public class EnvironmentGenerator : MonoBehaviour
 
     void CreateObject(Vector2 gridSpace)
     {
-        Instantiate(obstical, gridSpace + new Vector2(-8.5f, -4.5f), transform.rotation,transform);
+        Instantiate(obstical, gridSpace + new Vector2(-8.5f, -8.5f), transform.rotation,transform);
     }
 }

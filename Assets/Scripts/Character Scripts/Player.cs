@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     GameManager gm;
 
-
-
     void Awake()
     {
 
@@ -68,43 +66,44 @@ public class Player : MonoBehaviour
     }
     void Move()
     {
+#if UNITY_EDITOR
+        if (Input.GetKey(KeyCode.W))
+        {
+            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * 100);
+        }
+        else
+        {
+            rigid.velocity = Vector2.zero;
+        }
 
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * 100);
-        //}
-        //else if (Input.GetKey(KeyCode.S))
-        //{
-        //    rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * 100);
-        //}
-        //else
-        //{
-        //    rigid.velocity = Vector2.zero;
-        //}
-
-
+#else
         rigid.velocity = transform.up * Time.deltaTime * (gm.verticalInput * moveSpeed * 100);
+        #endif
     }
     void Boost()
     {
-
-        //curBoost -= Time.deltaTime;
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * boostMultiplier * 100);
-        //}
-        //else if (Input.GetKey(KeyCode.S))
-        //{
-        //    rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * boostMultiplier * 100);
-        //}
-        //else
-        //{
-        //    rigid.velocity = Vector2.zero;
-        //}
-
+#if UNITY_EDITOR
+        curBoost -= Time.deltaTime;
+        if (Input.GetKey(KeyCode.W))
+        {
+            rigid.velocity = transform.up * Time.deltaTime * (moveSpeed * boostMultiplier * 100);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            rigid.velocity = transform.up * Time.deltaTime * (-moveSpeed * boostMultiplier * 100);
+        }
+        else
+        {
+            rigid.velocity = Vector2.zero;
+        }
+#else
         curBoost -= Time.deltaTime;
         rigid.velocity = transform.up * Time.deltaTime * (gm.verticalInput * moveSpeed * boostMultiplier * 100);
-
+#endif
 
     }
     void Turn()
