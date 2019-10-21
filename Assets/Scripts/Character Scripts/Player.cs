@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     float curBoost;
     bool canBoost;
     bool boosting;
+    public bool hidden;
     Rigidbody2D rigid;
     GameManager gm;
 
@@ -53,9 +54,9 @@ public class Player : MonoBehaviour
         {
             boosting = false;
         }
-        if (!boosting && !canBoost)
+        if (!boosting && !canBoost&& !hidden)
         {
-            curBoost += Time.deltaTime/2;
+            curBoost += Time.deltaTime / 2;
         }
         if (curBoost >= maxBoost)
         {
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
 
 #else
         rigid.velocity = transform.up * Time.deltaTime * (gm.verticalInput * moveSpeed * 100);
-        #endif
+#endif
     }
     void Boost()
     {
@@ -120,18 +121,35 @@ public class Player : MonoBehaviour
 
         transform.Rotate(0, 0, (-rotSpeed * 100 * gm.horizontalInput) * Time.deltaTime, Space.Self);
     }
+
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bug"))
+        if (other.CompareTag("Plant"))
         {
-            Bug bug = other.GetComponent<Bug>();
-            gm.score += bug.pointsToGive;
-            Destroy(other.gameObject);
+            hidden = true;
         }
-        if (other.CompareTag("Bird"))
+        if (!hidden)
         {
-            gm.GameOver();
-            Destroy(gameObject);
+            if (other.CompareTag("Bug"))
+            {
+                Bug bug = other.GetComponent<Bug>();
+                gm.score += bug.pointsToGive;
+                Destroy(other.gameObject);
+            }
+            if (other.CompareTag("Bird"))
+            {
+                gm.GameOver();
+                Destroy(gameObject);
+            }
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Plant"))
+        {
+            hidden = false;
         }
     }
 }
