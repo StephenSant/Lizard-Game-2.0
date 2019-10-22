@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnvironmentGenerator : MonoBehaviour
 {
     
-    public GameObject obstical;
+    public GameObject[] rockPrefabs;
 
     int squareIndex;
     //game size 18 x 18
@@ -13,16 +13,19 @@ public class EnvironmentGenerator : MonoBehaviour
     public void PlaceObsticals()
     {
 
-        for (int x = 0; x < 17; x++)
+        for (int x = 0; x < 17; x+=3)
         {
-            for (int y = 0; y < 17; y++)
+            for (int y = 0; y < 17; y+=3)
             {
-                int r = Random.Range(0, 12);
+                int r = Random.Range(0, 2);
                 //Debug.Log(r);
                 if (r == 0)
                 {
-                    CreateObject(new Vector2(x, y));
-                    spaces[squareIndex] = new Vector2(x, y);
+                    if (x != 8 && y != 8)
+                    {
+                        CreateObject(new Vector2(x, y));
+                        spaces[squareIndex] = new Vector2(x, y);
+                    }
                 }
                 squareIndex++;
             }
@@ -31,6 +34,6 @@ public class EnvironmentGenerator : MonoBehaviour
 
     void CreateObject(Vector2 gridSpace)
     {
-        Instantiate(obstical, gridSpace + new Vector2(-8.5f, -8.5f), transform.rotation,transform);
+        Instantiate(rockPrefabs[Random.Range(0,4)], gridSpace + new Vector2(-8f, -8f), transform.rotation,transform);
     }
 }
