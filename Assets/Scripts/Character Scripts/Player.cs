@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 2;
-    public float dir;
     public float boostMultiplier = 2;
+    Vector2 keptDirection;
     public float maxBoost;
     float curBoost;
     bool canBoost;
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rigid;
     public Animator animator;
     GameManager gm;
-
+    Vector2 inputAxis;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    { 
+    {
         gm.boostAmount = curBoost;
         if (gm.boostActive && canBoost)
         {
@@ -61,14 +61,20 @@ public class Player : MonoBehaviour
             canBoost = true;
         }
 
-        Turn();
+        Rotate();
+
+#if UNITY_EDITOR
+        inputAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+#else
+        inputAxis = new Vector2(gm.horizontalInput, gm.verticalInput);
+#endif
     }
 
 
 
     void Move()
     {
-        rigid.velocity = new Vector2(Time.deltaTime * (gm.horizontalInput * moveSpeed * 100), Time.deltaTime * (gm.verticalInput * moveSpeed * 100));
+        rigid.velocity = new Vector2(Time.deltaTime * (inputAxis.x * moveSpeed * 100), Time.deltaTime * (inputAxis.y * moveSpeed * 100));
 
         if (rigid.velocity.x < -0.01f || rigid.velocity.x > 0.01f || rigid.velocity.y < -0.01f || rigid.velocity.y > 0.01f)
         {
@@ -83,15 +89,26 @@ public class Player : MonoBehaviour
     {
 
         curBoost -= Time.deltaTime;
-        rigid.velocity = new Vector2(Time.deltaTime * (gm.horizontalInput * moveSpeed * boostMultiplier * 100), Time.deltaTime * (gm.verticalInput * moveSpeed * boostMultiplier * 100));
+        rigid.velocity = new Vector2(Time.deltaTime * (inputAxis.x * moveSpeed * boostMultiplier * 100), Time.deltaTime * (inputAxis.y * moveSpeed * boostMultiplier * 100));
 
     }
 
-    void Turn()
+    void Rotate()
     {
-        Vector2 dirPos = transform.position + new Vector3(gm.horizontalInput, gm.verticalInput, 0);
-        Vector2 direction = new Vector2(dirPos.x - transform.position.x, dirPos.y - transform.position.y);
-        transform.up = direction;
+        if (inputAxis.x == 0 && inputAxis.y == 0)
+        {
+            transform.up = keptDirection;
+        }
+
+        else
+        {
+            Vector2 dirPos = transform.position + new Vector3(inputAxis.x, inputAxis.y, 0);
+            Vector2 direction = new Vector2(dirPos.x - transform.position.x, dirPos.y - transform.position.y);
+            transform.up = direction;
+            keptDirection = direction;
+        }
+
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
