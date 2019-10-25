@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public bool boostActive;
 
+    public bool playerHidden;
+
     void Awake()
     {
         if (instance == null)

@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        scoreText.text = "Score: " + gm.score;
+        scoreText.text = "Score: \n" + gm.score;
         boostBar.value = gm.boostAmount;
     }
 

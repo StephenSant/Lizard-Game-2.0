@@ -11,6 +11,10 @@ public class Bug : MonoBehaviour
     public LayerMask hitLayer;
     public Transform rightWallSensor, leftWallSensor;
 
+    public float swayTimeMin = 0.5f;
+    public float swayTimeMax = 1.5f;
+    public float swayValue;
+
     public bool hitRight, hitLeft;
     Rigidbody2D rigid;
 
@@ -20,6 +24,12 @@ public class Bug : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
     }
+
+    void Start()
+    {
+        StartCoroutine(Sway());
+    }
+
     void FixedUpdate()
     {
         #region Sensors
@@ -56,7 +66,7 @@ public class Bug : MonoBehaviour
         else
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(Vector3.forward * rotSpeed * Random.Range(-1,2));
+            transform.Rotate(Vector3.forward * rotSpeed * swayValue);
         }
         
         #region Destory Off Screen
@@ -67,4 +77,10 @@ public class Bug : MonoBehaviour
         #endregion
     }
 
+    IEnumerator Sway()
+    {
+        yield return new WaitForSeconds(Random.Range(swayTimeMin, swayTimeMax));
+        swayValue = Random.Range(-0.5f, 0.6f);
+        StartCoroutine(Sway());
+    }
 }

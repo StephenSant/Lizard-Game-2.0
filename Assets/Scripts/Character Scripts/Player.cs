@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        gm.playerHidden = hidden;
+
         gm.boostAmount = curBoost;
         if (gm.boostActive && canBoost)
         {

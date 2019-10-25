@@ -2176,12 +2176,6 @@ Transform:
   m_Father: {fileID: 2025721105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &980296266 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 2445901979189967778, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2445901980098593685}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &995639394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,6 +2782,7 @@ MonoBehaviour:
   verticalInput: 0
   horizontalInput: 0
   boostActive: 0
+  playerHidden: 0
 --- !u!4 &1382181895
 Transform:
   m_ObjectHideFlags: 0
@@ -2984,31 +2979,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436229860}
   m_CullTransparentMesh: 0
---- !u!1 &1454853473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2445901979622901907, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2445901980098593685}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1454853476
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454853473}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee78f3e6e10828544b4b0241c7536428, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1551611657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,46 +3757,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2445901979622901906, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445901979622901906, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445901979622901906, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445901979622901906, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445901979622901906, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445901979189967789, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: dir
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445901979189967789, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: rigid
-      value: 
-      objectReference: {fileID: 980296266}
-    - target: {fileID: 2445901979189967789, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1454853476}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73cbc55f4a604d94ab38062bcee2f1c6, type: 3}
 --- !u!1001 &8850818433902950256
@@ -3844,7 +3774,7 @@ PrefabInstance:
     - target: {fileID: 8850818433071633617, guid: 1540938f45d7e0941bd2d2a753e750f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8850818433071633617, guid: 1540938f45d7e0941bd2d2a753e750f7,
         type: 3}
@@ -3901,10 +3831,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1983477818}
-    - target: {fileID: 8850818433071633647, guid: 1540938f45d7e0941bd2d2a753e750f7,
+    - target: {fileID: 8850818433466673133, guid: 1540938f45d7e0941bd2d2a753e750f7,
         type: 3}
-      propertyPath: rotSpeed
-      value: 0.05
+      propertyPath: m_Name
+      value: Bird Graphic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1540938f45d7e0941bd2d2a753e750f7, type: 3}

@@ -52,5 +52,6 @@ public class BugSpawner : MonoBehaviour
         Instantiate(bugPrefab, bugSpawnPoint.position, bugSpawnPoint.rotation);
         yield return new WaitForSeconds(spawnRate);
         StartCoroutine(SpawnBugs());
+        PlaceSpawners();
     }
 }
