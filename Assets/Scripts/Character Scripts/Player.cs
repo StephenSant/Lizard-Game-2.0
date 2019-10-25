@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
 
         Rotate();
 
-#if UNITY_EDITOR
+#if (UNITY_EDITOR || UNITY_STANDALONE)
         inputAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 #else
         inputAxis = new Vector2(gm.horizontalInput, gm.verticalInput);
@@ -117,19 +117,27 @@ public class Player : MonoBehaviour
         {
             hidden = true;
         }
+        if (other.CompareTag("Bug"))
+        {
+            Bug bug = other.GetComponent<Bug>();
+            gm.score += bug.pointsToGive;
+            Destroy(other.gameObject);
+        }
         if (!hidden)
         {
-            if (other.CompareTag("Bug"))
-            {
-                Bug bug = other.GetComponent<Bug>();
-                gm.score += bug.pointsToGive;
-                Destroy(other.gameObject);
-            }
+
             if (other.CompareTag("Bird"))
             {
                 gm.GameOver();
                 Destroy(gameObject);
             }
+        }
+    }
+    void OnTrigger2D(Collider2D other)
+    {
+        if (other.CompareTag("Plant"))
+        {
+            hidden = true;
         }
     }
     void OnTriggerExit2D(Collider2D other)

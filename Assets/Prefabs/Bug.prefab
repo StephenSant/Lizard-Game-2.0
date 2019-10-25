@@ -201,7 +201,7 @@ MonoBehaviour:
   wallSensorSeperation: 25
   hitLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1025
   rightWallSensor: {fileID: 8756512166144705965}
   leftWallSensor: {fileID: 8756512166726999171}
   hitRight: 0

@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         environmentGenerator.PlaceObsticals();
-        bugSpawner.isSpawning(true);
+        bugSpawner.IsSpawning(true);
         Time.timeScale = 1;
     }
 

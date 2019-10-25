@@ -56,6 +56,7 @@ public class Bug : MonoBehaviour
         else
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
+            transform.Rotate(Vector3.forward * rotSpeed * Random.Range(-1,2));
         }
         
         #region Destory Off Screen
