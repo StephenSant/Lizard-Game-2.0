@@ -51,22 +51,22 @@ public class Bug : MonoBehaviour
         if (hitRight && hitLeft)
         {
             rigid.velocity = Vector2.zero;
-            transform.Rotate(Vector3.forward * rotSpeed);
+            transform.Rotate(Vector3.forward * rotSpeed * Time.deltaTime);
         }
         else if (hitRight && !hitLeft)
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(Vector3.forward * rotSpeed);
+            transform.Rotate(Vector3.forward * rotSpeed * Time.deltaTime);
         }
         else if (hitLeft && !hitRight)
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(-Vector3.forward * rotSpeed);
+            transform.Rotate(-Vector3.forward * rotSpeed * Time.deltaTime);
         }
         else
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
-            transform.Rotate(Vector3.forward * rotSpeed * swayValue);
+            transform.Rotate(Vector3.forward * rotSpeed * swayValue * Time.deltaTime);
         }
         
         #region Destory Off Screen

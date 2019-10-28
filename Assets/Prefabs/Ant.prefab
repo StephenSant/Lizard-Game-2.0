@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 100
-  rotSpeed: 5
+  rotSpeed: 150
   wallSensorLength: 1
   wallSensorSeperation: 25
   hitLayer:

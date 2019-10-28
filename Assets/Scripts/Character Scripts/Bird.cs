@@ -9,7 +9,7 @@ public class Bird : MonoBehaviour
     public float rotSpeed = 0.05f;
     public float swayTimeMin = 0.5f;
     public float swayTimeMax = 2f;
-    public int swayValue;
+    public float swayValue;
 
     public Transform player;
 
@@ -88,18 +88,11 @@ public class Bird : MonoBehaviour
         Quaternion rot = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         return Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
     }
-    Quaternion RotateTowards(Vector3 target)
-    {
-        Vector2 dir = target - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion rot = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        return rot;
-    }
 
     IEnumerator Sway()
     {
         yield return new WaitForSeconds(Random.Range(swayTimeMin,swayTimeMax));
-        swayValue = Random.Range(-5, 6);
+        swayValue = Random.Range(-2.5f, 2.5f);
         StartCoroutine(Sway());
     }
 
