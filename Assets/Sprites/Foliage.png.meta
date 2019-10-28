@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: f7f1c7f9a9bce824b9676581c3a95e17
+guid: 4c1ba6bd74b7b724f8deea3fc61f6b50
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Bird_0
-    21300002: Bird_1
-    21300004: Bird_2
-    21300006: Bird_3
-    21300008: Bird_4
-    21300010: Bird_5
+    21300000: Foliage_0
+    21300002: Foliage_1
+    21300004: Foliage_2
+    21300006: Foliage_3
+    21300008: Foliage_4
+    21300010: Foliage_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -66,10 +66,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,10 +77,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,121 +90,121 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bird_0
+      name: Foliage_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 68
-        width: 31
-        height: 25
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5cb300dd607c75488b27b0cb6532421
+      spriteID: 9132c56328f94ae4c97ccc0417262b4a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_1
+      name: Foliage_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 68
-        width: 29
-        height: 25
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7907c665207076d4386257be2245dac0
+      spriteID: 871da3bef9a03854eaadc9d03117a416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_2
+      name: Foliage_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 36
-        width: 25
-        height: 25
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0c92feba471e854d9d4af348d7df9ee
+      spriteID: 8a36f431b0fe01848b2a0034b1c2d9c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_3
+      name: Foliage_3
       rect:
         serializedVersion: 2
-        x: 38
-        y: 36
-        width: 21
-        height: 25
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9e280d6bc8cfc34e8e90296719a68e8
+      spriteID: 2f85635c2adb75a428ac90e3bc853b60
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_4
+      name: Foliage_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 25
-        height: 25
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e39060c3026737438a802988d21023c
+      spriteID: c66c4746b59b15042821de9eebf99235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_5
+      name: Foliage_5
       rect:
         serializedVersion: 2
-        x: 34
-        y: 4
-        width: 29
-        height: 25
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81213c094a8c8e74db18d5744f89d5eb
+      spriteID: ddcdcb2018b2d8e41ab42de7b857fc21
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8d89f7fc5dbdccb428dfaae2fe9d5498
+    spriteID: 2a6ff352487068a4f955e8fba44f21ce
     vertices: []
     indices: 
     edges: []
