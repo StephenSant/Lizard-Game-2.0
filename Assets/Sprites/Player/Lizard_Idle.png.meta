@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d94fba30a8aaee43b6deaf84881f062
+guid: dfc49c6caf2975641b047b96ae5bb57b
 TextureImporter:
   fileIDToRecycleName:
     21300000: Lizard_Idle_0
@@ -30,6 +30,23 @@ TextureImporter:
     21300050: Lizard_Idle_25
     21300052: Lizard_Idle_26
     21300054: Lizard_Idle_27
+    21300056: Lizard_Idle_28
+    21300058: Lizard_Idle_29
+    21300060: Lizard_Idle_30
+    21300062: Lizard_Idle_31
+    21300064: Lizard_Idle_32
+    21300066: Lizard_Idle_33
+    21300068: Lizard_Idle_34
+    21300070: Lizard_Idle_35
+    21300072: Lizard_Idle_36
+    21300074: Lizard_Idle_37
+    21300076: Lizard_Idle_38
+    21300078: Lizard_Idle_39
+    21300080: Lizard_Idle_40
+    21300082: Lizard_Idle_41
+    21300084: Lizard_Idle_42
+    21300086: Lizard_Idle_43
+    21300088: Lizard_Idle_44
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -73,7 +90,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 22
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -92,8 +109,8 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 0
-    crunchedCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -103,8 +120,8 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 0
-    crunchedCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -116,17 +133,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35912585c907ca44b95b073b18a072cc
+      spriteID: 8c02e3f3d66bdbd4ea329a8fee43e7eb
       vertices: []
       indices: 
       edges: []
@@ -136,17 +153,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 192
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90ff101ecf4bf344dbcb5632310c9848
+      spriteID: edb59e867cde3114e93bb0d0ceb85fe6
       vertices: []
       indices: 
       edges: []
@@ -156,17 +173,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 192
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a1fb01fc0c72a429e09a8696fcc7a9
+      spriteID: 095b19b1f5a4bdd448da1cfee1cc91ea
       vertices: []
       indices: 
       edges: []
@@ -176,17 +193,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 192
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8629d8c822e1ed47a1c655812fa1ff8
+      spriteID: f425086f6e2cabc419460b59ca898705
       vertices: []
       indices: 
       edges: []
@@ -196,17 +213,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 192
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d12beaae37540247aaad541056999c1
+      spriteID: b63de2a1f21dce7488158ce93668ae7b
       vertices: []
       indices: 
       edges: []
@@ -216,17 +233,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 192
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 899bf95928700c744bce203acfeb2c9f
+      spriteID: 77bdb3f26b8303a4786c6a39c5e4a294
       vertices: []
       indices: 
       edges: []
@@ -236,17 +253,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78ba9ed3086c3c142a1f9d00faec5367
+      spriteID: e669a60fb6c571b4b877586e36ba3e13
       vertices: []
       indices: 
       edges: []
@@ -255,18 +272,18 @@ TextureImporter:
       name: Lizard_Idle_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 224
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3b1fc79d7119494fbb3b3f258f1f337
+      spriteID: 2d6d150a153cab9469450c5205685580
       vertices: []
       indices: 
       edges: []
@@ -275,18 +292,18 @@ TextureImporter:
       name: Lizard_Idle_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 256
+        y: 256
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a80355e278f7dd44bbbc9e2ae648243f
+      spriteID: 6b19f7b64b6292443af817978cc4efef
       vertices: []
       indices: 
       edges: []
@@ -295,18 +312,18 @@ TextureImporter:
       name: Lizard_Idle_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 0
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 448f142ce0b7e5a4a954c48991e12930
+      spriteID: e0ab6cadc9e19274f86bf714ff4351bf
       vertices: []
       indices: 
       edges: []
@@ -315,18 +332,18 @@ TextureImporter:
       name: Lizard_Idle_10
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
+        x: 32
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a00933149f9814a43bceb644e5e9abc3
+      spriteID: ebf66f06b0fb3164296452a183b937bf
       vertices: []
       indices: 
       edges: []
@@ -335,18 +352,18 @@ TextureImporter:
       name: Lizard_Idle_11
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 64
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bff1bb580cc2c1545af6d2a87e66acea
+      spriteID: 2f178f453e3e3dd4caa1ea0839e3e5c6
       vertices: []
       indices: 
       edges: []
@@ -355,18 +372,18 @@ TextureImporter:
       name: Lizard_Idle_12
       rect:
         serializedVersion: 2
-        x: 160
-        y: 128
+        x: 96
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bc04e79a6c37e34cba5fe770adcbc57
+      spriteID: a944a6a6b9074d44d96f5af495f85cbf
       vertices: []
       indices: 
       edges: []
@@ -375,18 +392,18 @@ TextureImporter:
       name: Lizard_Idle_13
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 128
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf068243632406e499956498840b98f1
+      spriteID: 16ea58e394342ef4180a976614eef344
       vertices: []
       indices: 
       edges: []
@@ -395,18 +412,18 @@ TextureImporter:
       name: Lizard_Idle_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 160
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deac264c7f98c4b4c834b72f41f88a47
+      spriteID: a67242791487e8b438006dfd04ba03ba
       vertices: []
       indices: 
       edges: []
@@ -415,18 +432,18 @@ TextureImporter:
       name: Lizard_Idle_15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 192
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08950118939126a4d87854331cc950cf
+      spriteID: 4dac2eac3d3a78542a1c94e83afd47b2
       vertices: []
       indices: 
       edges: []
@@ -435,18 +452,18 @@ TextureImporter:
       name: Lizard_Idle_16
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 224
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cf714e97ead3a541a8411c9c7b737fc
+      spriteID: d25e28c4906844842836ba5c4106a818
       vertices: []
       indices: 
       edges: []
@@ -455,18 +472,18 @@ TextureImporter:
       name: Lizard_Idle_17
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 256
+        y: 192
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 979fc4bc230ff2f429c2a3ded09c8fe9
+      spriteID: f510153b5c089264e9e6e5c9cb6833ea
       vertices: []
       indices: 
       edges: []
@@ -475,18 +492,18 @@ TextureImporter:
       name: Lizard_Idle_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 0
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ced03b2bdf51e4b86d8e44f4dba354
+      spriteID: 0901c6797927bfe4aa45bcd0e84b75fb
       vertices: []
       indices: 
       edges: []
@@ -495,18 +512,18 @@ TextureImporter:
       name: Lizard_Idle_19
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
+        x: 32
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02bb9172ba449bd458fa5e83c17d9fe1
+      spriteID: b07d4e73771acc947ae536e1bd7639ab
       vertices: []
       indices: 
       edges: []
@@ -515,18 +532,18 @@ TextureImporter:
       name: Lizard_Idle_20
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 64
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cef7c5887a114cf44b22ef9be7a038fd
+      spriteID: 452f11eb31aca7e4ca30ccf7fef6fba4
       vertices: []
       indices: 
       edges: []
@@ -535,18 +552,18 @@ TextureImporter:
       name: Lizard_Idle_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 96
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eead14c137941840a77f7ef5fd3254b
+      spriteID: 9ffa153cb461785429cb106dadbd933f
       vertices: []
       indices: 
       edges: []
@@ -555,18 +572,18 @@ TextureImporter:
       name: Lizard_Idle_22
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 128
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6fec93a8492caf419371e3f9f0168a3
+      spriteID: 4c99249ddabdce943891ee07f51ba733
       vertices: []
       indices: 
       edges: []
@@ -575,18 +592,18 @@ TextureImporter:
       name: Lizard_Idle_23
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 160
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edbd32491baa59844b26e9c34208910a
+      spriteID: 9c4e84d71f467984bb6e74dcb51de741
       vertices: []
       indices: 
       edges: []
@@ -595,18 +612,18 @@ TextureImporter:
       name: Lizard_Idle_24
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 192
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b4232ffea47b214f82849c0cc692ef8
+      spriteID: d6365c837ea64044c83143bc295f91ca
       vertices: []
       indices: 
       edges: []
@@ -615,18 +632,18 @@ TextureImporter:
       name: Lizard_Idle_25
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 224
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4a22cfb415760544ac26047a875dca4
+      spriteID: 4d25d0fef5bcae44eb3646263ee77e59
       vertices: []
       indices: 
       edges: []
@@ -635,18 +652,18 @@ TextureImporter:
       name: Lizard_Idle_26
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
+        x: 256
+        y: 128
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 626e35db65b3494479987d55ea5cd2c4
+      spriteID: 0c023a94653dcc64381f0bd3fd3a9e08
       vertices: []
       indices: 
       edges: []
@@ -655,18 +672,358 @@ TextureImporter:
       name: Lizard_Idle_27
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 0
+        y: 64
         width: 32
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db3e27e1e96df2548a63112dae61ea7a
+      spriteID: 056e70caee27748479d7baaaff9242fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f002cde08ac6eff4e863b951b46d8589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb0d80e071a24b42abf5225d3fb7491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1824b6418ea2df745b0c15a75eb8f7f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbae7707a7fc7d4fb76d98c79f661b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e834dcabcbd144eb599935f53b1557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c8fa195c621d14189d4e637f470b6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_34
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961fc245d839ae147a440d159aca1c74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_35
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ebc43a439e7f04aaea53b4a1a055ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3471fa25dd1db914383b89547c34aed9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d87465f95096546a57ba56b5f01c63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2776e80b6bbc45f48b3340a6505cc940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada5504e4e20d1a4b9a83d276f5ed7fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36265cf7934eaca499303e8b4d3a2ac2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5b405feccbb5941be69a4b47d57977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ae2be908e38794684a8d0988f9e260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fc419c4160e93469cd4741075c466d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lizard_Idle_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586cd205ae1fd074b983d611845c9eab
       vertices: []
       indices: 
       edges: []
@@ -674,7 +1031,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7fdb69d3c93cdce4bb1748d1dc3c10f2
+    spriteID: 398f4cb9131a1994184d42dfc58fc578
     vertices: []
     indices: 
     edges: []

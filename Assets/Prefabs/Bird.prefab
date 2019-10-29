@@ -49,8 +49,8 @@ MonoBehaviour:
   maxScore: 25
   moveSpeedMultiplyer: 10
   rotSpeed: 0.1
-  swayTimeMin: 0.5
-  swayTimeMax: 2
+  swayTimeMin: 0
+  swayTimeMax: 1
   swayValue: 0
   player: {fileID: 0}
 --- !u!50 &8850818433071633618

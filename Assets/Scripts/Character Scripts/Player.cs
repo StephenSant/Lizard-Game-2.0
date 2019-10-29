@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     GameManager gm;
     Vector2 inputAxis;
 
+    public SpriteRenderer playerSprite;
+
     private void Start()
     {
         curBoost = maxBoost;
@@ -25,7 +27,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        animator.SetFloat("Speed", rigid.velocity.magnitude);
+
+
         gm.playerHidden = hidden;
+
+        if (hidden)
+        {
+            playerSprite.color = Color.grey;
+        }
+        else
+        {
+            playerSprite.color = Color.white;
+        }
 
         gm.boostAmount = curBoost;
         if (gm.boostActive && canBoost)
@@ -42,11 +56,9 @@ public class Player : MonoBehaviour
         if (boosting)
         {
             Boost();
-            animator.SetBool("Running", true);
         }
         else
         {
-            animator.SetBool("Running", false);
             Move();
         }
         if (curBoost <= 0)
@@ -70,6 +82,7 @@ public class Player : MonoBehaviour
 #else
         inputAxis = new Vector2(gm.horizontalInput, gm.verticalInput);
 #endif
+        animator.SetBool("Moving", inputAxis.magnitude>0.1f);
     }
 
 
@@ -78,21 +91,12 @@ public class Player : MonoBehaviour
     {
         rigid.velocity = new Vector2(Time.deltaTime * (inputAxis.x * moveSpeed * 100), Time.deltaTime * (inputAxis.y * moveSpeed * 100));
 
-        if (rigid.velocity.x < -0.01f || rigid.velocity.x > 0.01f || rigid.velocity.y < -0.01f || rigid.velocity.y > 0.01f)
-        {
-            animator.SetBool("Walking", true);
-        }
-        else
-        {
-            animator.SetBool("Walking", false);
-        }
     }
     void Boost()
     {
 
         curBoost -= Time.deltaTime;
         rigid.velocity = new Vector2(Time.deltaTime * (inputAxis.x * moveSpeed * boostMultiplier * 100), Time.deltaTime * (inputAxis.y * moveSpeed * boostMultiplier * 100));
-
     }
 
     void Rotate()
