@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     Vector2 inputAxis;
 
     public SpriteRenderer playerSprite;
+    public ParticleSystem boostParticles;
 
     private void Start()
     {
@@ -27,8 +28,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("Speed", rigid.velocity.magnitude);
-
+        animator.SetFloat("Speed", inputAxis.magnitude);
 
         gm.playerHidden = hidden;
 
@@ -56,10 +56,12 @@ public class Player : MonoBehaviour
         if (boosting)
         {
             Boost();
+            animator.SetBool("Running", true);
         }
         else
         {
             Move();
+            animator.SetBool("Running", false);
         }
         if (curBoost <= 0)
         {
@@ -82,7 +84,13 @@ public class Player : MonoBehaviour
 #else
         inputAxis = new Vector2(gm.horizontalInput, gm.verticalInput);
 #endif
-        animator.SetBool("Moving", inputAxis.magnitude>0.1f);
+
+        if (boosting && rigid.velocity.magnitude > 0.5f)
+        {
+            
+            boostParticles.enableEmission=true;
+        }
+        else { boostParticles.enableEmission = false; }
     }
 
 
@@ -94,7 +102,6 @@ public class Player : MonoBehaviour
     }
     void Boost()
     {
-
         curBoost -= Time.deltaTime;
         rigid.velocity = new Vector2(Time.deltaTime * (inputAxis.x * moveSpeed * boostMultiplier * 100), Time.deltaTime * (inputAxis.y * moveSpeed * boostMultiplier * 100));
     }
