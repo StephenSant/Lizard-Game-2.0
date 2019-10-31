@@ -144,7 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3304d86a7ae52f24095015bbfdede0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startScene: 1
   scoreText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  boostBar: {fileID: 0}
   gamePanel: {fileID: 0}
   pausePanel: {fileID: 0}
   gameOverPanel: {fileID: 0}
