@@ -28,7 +28,15 @@ public class UIManager : MonoBehaviour
     {
         if (!startScene)
         {
-            scoreText.text = "Score: \n" + gm.score;
+
+            if (gm.score > gm.highScore)
+            {
+                scoreText.text = "Score:\n" + gm.score + "\nHighScore:\n" + gm.score;
+            }
+            else
+            {
+                scoreText.text = "Score:\n" + gm.score + "\nHighScore:\n" + gm.highScore;
+            }
             boostBar.value = gm.boostAmount;
         }
     }

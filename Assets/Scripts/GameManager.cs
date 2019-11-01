@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,25 @@ public class GameManager : MonoBehaviour
     public bool boostActive;
 
     public bool playerHidden = true;
+
+    string json;
+
+    void Save()
+    {
+        SaveData saveData = new SaveData { highScore = instance.highScore };
+        json = JsonUtility.ToJson(saveData);
+        File.WriteAllText(Application.dataPath + "/save.txt", json);
+    }
+
+    void Load()
+    {
+        if (File.Exists(Application.dataPath + "/save.txt"))
+        {
+            string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
+            SaveData loadedData = JsonUtility.FromJson<SaveData>(saveString);
+            highScore = loadedData.highScore;
+        }
+    }
 
     void Awake()
     {
@@ -47,6 +67,7 @@ public class GameManager : MonoBehaviour
         environmentGenerator.PlaceObsticals();
         bugSpawner.IsSpawning(true);
         Time.timeScale = 1;
+        Load();
     }
 
     private void Update()
@@ -64,10 +85,19 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
-        if (score > highScore) { highScore = score; }
+        if (score > highScore)
+        {
+            highScore = score;
+            Save();
+        }
         uIManager.finalScoreText.text = "Your score: " + score + "\nHigh score: " + highScore;
     }
 
 
     
+}
+
+class SaveData
+{
+    public int highScore;
 }
