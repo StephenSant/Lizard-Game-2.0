@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public bool boostActive;
 
-    public bool playerHidden;
+    public bool playerHidden = true;
 
     void Awake()
     {

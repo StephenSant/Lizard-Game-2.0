@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    public float maxScore= 25;
+    public int maxScore = 25;
     public float moveSpeedMultiplyer = 10;
     public float rotSpeed = 0.05f;
     public float swayTimeMin = 0.5f;
@@ -28,55 +28,54 @@ public class Bird : MonoBehaviour
     }
     void Update()
     {
-
-        if (player == null && !gm.gameOver)
+        if (gm != null)
         {
-            Debug.LogError("Bird cannot locate player!");
-        }
-        else if (player == null && gm.gameOver)
-        {
-            Debug.Log("Game Over!");
-        }
 
-        else if (transform.position.x > 12 || transform.position.x < -12 || transform.position.y > 12 ||transform.position.y < -12)
-        {
-            if (gm.score < maxScore)
+            if (!gm.playerHidden && player != null)
             {
-                rigid.velocity = transform.up * (gm.score * moveSpeedMultiplyer) * Time.deltaTime;
-                transform.rotation = RotateTowards(Vector3.zero, rotSpeed * gm.score);
+                if (gm.score < maxScore)
+                {
+                    rigid.velocity = transform.up * (gm.score * moveSpeedMultiplyer) * Time.deltaTime;
+                    transform.rotation = RotateTowards(player.position, rotSpeed * gm.score);
+                }
+                else
+                {
+                    rigid.velocity = transform.up * (maxScore * moveSpeedMultiplyer) * Time.deltaTime;
+                    transform.rotation = RotateTowards(player.position, rotSpeed * maxScore);
+                }
             }
-            else
+
+            else if (transform.position.x > 12 || transform.position.x < -12 || transform.position.y > 12 || transform.position.y < -12)
             {
-                rigid.velocity = transform.up * (maxScore * moveSpeedMultiplyer) * Time.deltaTime;
-                transform.rotation = RotateTowards(Vector3.zero, rotSpeed * maxScore);
+                if (gm.score < maxScore)
+                {
+                    Return(gm.score);
+                }
+                else
+                {
+                    Return(maxScore);
+                }
+            }
+
+            else if (gm.playerHidden || player == null)
+            {
+                if (gm.score > maxScore)
+                {
+                    Wander(maxScore);
+                }
+                else { Wander(gm.score); }
+
             }
         }
-
-        else if (!gm.playerHidden)
-        {
-            if (gm.score < maxScore)
-            {
-                rigid.velocity = transform.up * (gm.score * moveSpeedMultiplyer) * Time.deltaTime;
-            transform.rotation = RotateTowards(player.position, rotSpeed * gm.score);
-            }
-            else
-            {
-                rigid.velocity = transform.up * (maxScore * moveSpeedMultiplyer) * Time.deltaTime;
-                transform.rotation = RotateTowards(player.position, rotSpeed * maxScore);
-            }
-        }
-
         else
         {
-            if (gm.score < maxScore)
+            if (transform.position.x > 12 || transform.position.x < -12 || transform.position.y > 12 || transform.position.y < -12)
             {
-                rigid.velocity = transform.up * (gm.score * moveSpeedMultiplyer) * Time.deltaTime;
-                transform.rotation = RotateTowards(transform.position + (transform.right * swayValue), rotSpeed * gm.score);
+                Return(maxScore);
             }
             else
             {
-                rigid.velocity = transform.up * (maxScore * moveSpeedMultiplyer) * Time.deltaTime;
-                transform.rotation = RotateTowards(transform.position + (transform.right * swayValue), rotSpeed * maxScore);
+                Wander(maxScore);
             }
         }
     }
@@ -91,9 +90,21 @@ public class Bird : MonoBehaviour
 
     IEnumerator Sway()
     {
-        yield return new WaitForSeconds(Random.Range(swayTimeMin,swayTimeMax));
+        yield return new WaitForSeconds(Random.Range(swayTimeMin, swayTimeMax));
         swayValue = Random.Range(-2.5f, 2.5f);
         StartCoroutine(Sway());
     }
 
+    void Wander(int speedLevel)
+    {
+
+                    rigid.velocity = transform.up * (speedLevel * moveSpeedMultiplyer) * Time.deltaTime;
+                    transform.rotation = RotateTowards(transform.position + (transform.right * swayValue), rotSpeed * speedLevel);
+    }
+
+    void Return(int speedLevel)
+    {
+        rigid.velocity = transform.up * (speedLevel * moveSpeedMultiplyer) * Time.deltaTime;
+        transform.rotation = RotateTowards(Vector3.zero, rotSpeed * speedLevel);
+    }
 }
