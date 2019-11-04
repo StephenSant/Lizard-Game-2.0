@@ -5,6 +5,10 @@ using System.IO;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject touchInputObject;
+    public GameObject pauseButton;
+    public GameObject uIPanel;
+
     public int score;
     public int highScore;
     public bool gameOver;
@@ -59,6 +63,13 @@ public class GameManager : MonoBehaviour
         environmentGenerator = GetComponent<EnvironmentGenerator>();
         bugSpawner = GetComponent<BugSpawner>();
         touchInputs = GetComponent<TouchInputs>();
+
+#if (UNITY_EDITOR || UNITY_STANDALONE)
+        pauseButton.transform.SetParent(uIPanel.transform);
+        Destroy(touchInputObject);
+#endif
+
+        
     }
 
 
