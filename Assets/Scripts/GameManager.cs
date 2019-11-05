@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 public class GameManager : MonoBehaviour
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     public int score;
     public int highScore;
     public bool gameOver;
+
+    public bool music;
+    public bool sound;
 
     public float boostAmount;
 
@@ -32,9 +36,26 @@ public class GameManager : MonoBehaviour
 
     string json;
 
-    void Save()
+    public Toggle musicButton;
+    public Toggle soundButton;
+
+    void SaveScore()
     {
-        SaveData saveData = new SaveData { highScore = instance.highScore };
+        SaveData saveData = new SaveData
+        {
+            highScore = instance.highScore,
+        };
+        json = JsonUtility.ToJson(saveData);
+        File.WriteAllText(Application.dataPath + "/save.txt", json);
+    }
+
+    public void SaveAudio()
+    {
+        SaveData saveData = new SaveData
+        {
+            music = instance.music,
+            sound = instance.sound
+        };
         json = JsonUtility.ToJson(saveData);
         File.WriteAllText(Application.dataPath + "/save.txt", json);
     }
@@ -46,6 +67,10 @@ public class GameManager : MonoBehaviour
             string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
             SaveData loadedData = JsonUtility.FromJson<SaveData>(saveString);
             highScore = loadedData.highScore;
+            music = loadedData.music;
+            sound = loadedData.sound;
+            musicButton.isOn = music;
+            soundButton.isOn = sound;
         }
     }
 
@@ -84,6 +109,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             uIManager.TogglePause();
@@ -105,16 +131,27 @@ public class GameManager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
-            Save();
+            SaveScore();
         }
         uIManager.finalScoreText.text = "Your score: " + score + "\nHigh score: " + highScore;
     }
 
+    public void SetSound()
+    {
+        sound = soundButton.isOn;
+        SaveAudio();
+    }
 
-
+    public void SetMusic()
+    {
+        music = musicButton.isOn;
+        SaveAudio();
+    }
 }
 
 class SaveData
 {
     public int highScore;
+    public bool music;
+    public bool sound;
 }
