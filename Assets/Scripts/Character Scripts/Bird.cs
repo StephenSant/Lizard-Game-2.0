@@ -91,15 +91,14 @@ public class Bird : MonoBehaviour
     IEnumerator Sway()
     {
         yield return new WaitForSeconds(Random.Range(swayTimeMin, swayTimeMax));
-        swayValue = Random.Range(-2.5f, 2.5f);
+        swayValue = Random.Range(-5f, 5f);
         StartCoroutine(Sway());
     }
 
     void Wander(int speedLevel)
     {
-
-                    rigid.velocity = transform.up * (speedLevel * moveSpeedMultiplyer) * Time.deltaTime;
-                    transform.rotation = RotateTowards(transform.position + (transform.right * swayValue), rotSpeed * speedLevel);
+        rigid.velocity = transform.up * (speedLevel * moveSpeedMultiplyer) * Time.deltaTime;
+        transform.rotation = RotateTowards(transform.position + (transform.up * 10) + (transform.right * swayValue), rotSpeed * speedLevel);
     }
 
     void Return(int speedLevel)

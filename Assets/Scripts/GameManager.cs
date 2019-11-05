@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject touchInputObject;
     public GameObject pauseButton;
     public GameObject uIPanel;
+    public GameObject instructions;
 
     public int score;
     public int highScore;
@@ -68,8 +69,9 @@ public class GameManager : MonoBehaviour
         pauseButton.transform.SetParent(uIPanel.transform);
         Destroy(touchInputObject);
 #endif
-
-        
+#if (UNITY_IOS || UNITY_ANDROID)
+        Destroy(instructions);
+#endif 
     }
 
 
@@ -89,6 +91,11 @@ public class GameManager : MonoBehaviour
         boostActive = touchInputs.boostActive;
         horizontalInput = touchInputs.horizontalInput;
         verticalInput = touchInputs.verticalInput;
+
+#if (!UNITY_IOS || !UNITY_ANDROID)
+        if (score > 5)
+        { Destroy(instructions); }
+#endif
     }
 
     public void GameOver()
@@ -104,7 +111,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
+
 }
 
 class SaveData

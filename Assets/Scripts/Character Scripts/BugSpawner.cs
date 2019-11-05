@@ -32,7 +32,7 @@ public class BugSpawner : MonoBehaviour
             StartCoroutine(SpawnAnt());
             bugEntryIndex++;
         }
-        if (gm.score >= 5 && bugEntryIndex < 2)
+        if (gm.score >= bugs[1].entryScore && bugEntryIndex < 2)
         {
             StartCoroutine(SpawnBeetle());
             bugEntryIndex++;
@@ -78,4 +78,5 @@ public struct Bugs
 {
     public GameObject bugPrefab;
     public float spawnRate;
+    public int entryScore;
 }

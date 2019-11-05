@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxScore: 25
-  moveSpeedMultiplyer: 10
+  moveSpeedMultiplyer: 5
   rotSpeed: 0.1
   swayTimeMin: 0
   swayTimeMax: 1

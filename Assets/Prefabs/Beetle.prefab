@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7572664714753593532}
   - component: {fileID: 7572664714753593533}
-  - component: {fileID: 3692706258136296546}
+  - component: {fileID: 946970597887844276}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7572664714753593531}
   m_LocalRotation: {x: -0, y: -0, z: -0.0000009089707, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 7572664715235085976}
   m_RootOrder: 0
@@ -69,18 +69,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 196b2e56e5aca984a8e0a8adab12c385, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 5cbe119c3fa3cd848b8295039b503f5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9375, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3692706258136296546
+--- !u!95 &946970597887844276
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -88,9 +88,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7572664714753593531}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 831616dbe12c92f439d9d2434652b0a7, type: 2}
+  m_Controller: {fileID: 9100000, guid: eef1b48ba8d0b004fb7fb8b45647a1a6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -181,7 +181,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.3
 --- !u!50 &7572664715235085978
 Rigidbody2D:
   serializedVersion: 4
@@ -245,7 +245,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.225
+  m_Radius: 0.325
 --- !u!1 &7572664715944098292
 GameObject:
   m_ObjectHideFlags: 0
