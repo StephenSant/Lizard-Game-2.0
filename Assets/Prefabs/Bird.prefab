@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba3b554ff82a664ba853bf643981ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScore: 25
+  maxScore: 50
   moveSpeedMultiplyer: 5
   rotSpeed: 0.1
   swayTimeMin: 0

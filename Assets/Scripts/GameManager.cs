@@ -138,13 +138,13 @@ public class GameManager : MonoBehaviour
 
     public void SetSound()
     {
-        sound = soundButton.isOn;
+        sound = !soundButton.isOn;
         SaveAudio();
     }
 
     public void SetMusic()
     {
-        music = musicButton.isOn;
+        music = !musicButton.isOn;
         SaveAudio();
     }
 }

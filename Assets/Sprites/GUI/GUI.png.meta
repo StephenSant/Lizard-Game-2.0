@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 5cbe119c3fa3cd848b8295039b503f5a
+guid: b9e5a2d9dbabad342b6dc12fc5995704
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Beetle_0
-    21300002: Beetle_1
-    21300004: Beetle_2
-    21300006: Beetle_3
+    21300000: Music_On
+    21300002: Music_Off
+    21300004: Sound_On
+    21300006: Sound_Off
+    21300008: Button
+    21300010: Button_Pause
+    21300012: Panel
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -49,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -88,81 +91,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Beetle_0
+      name: Music_On
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf15f3a37aeea049b2b26a4c3b60e85
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music_Off
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37255e565df39764c95938e4aa312dae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sound_On
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcae3746414c1e24990eacc45f90f8ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sound_Off
       rect:
         serializedVersion: 2
         x: 0
         y: 16
-        width: 15
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e48c0f206fcc2244958e0dfbc08f641
+      spriteID: 45575e4c713351a4aa8cd338634d3f7c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beetle_1
+      name: Button
       rect:
         serializedVersion: 2
         x: 16
         y: 16
-        width: 15
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9613fef754ca664fac254f32c42c113
+      spriteID: 7e83c80fb54227e4fb058956fe5f865c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beetle_2
+      name: Button_Pause
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058092c7f0dd5ec43b2157ef6d8338ec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panel
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0990a3c1715b10c49b6409eaf9db3394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Beetle_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22c8f47058bc5c04fab105f37c276725
+      spriteID: 339e07f6914e9f4498453383d4d98a55
       vertices: []
       indices: 
       edges: []
@@ -170,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1f9fa044508d16249bbce9fbac35b532
+    spriteID: c1cb8f93ee53c7b4ca0baf58fbf69aeb
     vertices: []
     indices: 
     edges: []
