@@ -39,22 +39,11 @@ public class GameManager : MonoBehaviour
     public Toggle musicButton;
     public Toggle soundButton;
 
-    void SaveScore()
+    public void Save()
     {
         SaveData saveData = new SaveData
         {
-            highScore = instance.highScore,
-        };
-        json = JsonUtility.ToJson(saveData);
-        File.WriteAllText(Application.dataPath + "/save.txt", json);
-    }
-
-    public void SaveAudio()
-    {
-        SaveData saveData = new SaveData
-        {
-            music = instance.music,
-            sound = instance.sound
+            highScore = instance.highScore, music = instance.music, sound = instance.sound
         };
         json = JsonUtility.ToJson(saveData);
         File.WriteAllText(Application.dataPath + "/save.txt", json);
@@ -66,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
             SaveData loadedData = JsonUtility.FromJson<SaveData>(saveString);
-            highScore = loadedData.highScore;
+            instance.highScore = loadedData.highScore;
             music = loadedData.music;
             sound = loadedData.sound;
             musicButton.isOn = music;
@@ -90,7 +79,7 @@ public class GameManager : MonoBehaviour
         bugSpawner = GetComponent<BugSpawner>();
         touchInputs = GetComponent<TouchInputs>();
 
-#if (UNITY_EDITOR || UNITY_STANDALONE)
+#if (UNITY_EDITOR || UNITY_STANDALONE || Unity_WebGL)
         pauseButton.transform.SetParent(uIPanel.transform);
         Destroy(touchInputObject);
 #endif
@@ -103,8 +92,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         environmentGenerator.PlaceObsticals();
-        Time.timeScale = 1;
         Load();
+        if (music)
+        {
+
+        }
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -131,21 +124,21 @@ public class GameManager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
-            SaveScore();
         }
+        Save();
         uIManager.finalScoreText.text = "Your score: " + score + "\nHigh score: " + highScore;
     }
 
     public void SetSound()
     {
-        sound = !soundButton.isOn;
-        SaveAudio();
+        sound = soundButton.isOn;
+        Save();
     }
 
     public void SetMusic()
     {
-        music = !musicButton.isOn;
-        SaveAudio();
+        music = musicButton.isOn;
+        Save();
     }
 }
 

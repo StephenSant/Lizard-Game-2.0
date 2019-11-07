@@ -17,6 +17,14 @@ public class UIManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject gameOverPanel;
 
+    public Toggle musicButton;
+    public Image musicImageOn;
+    public Image musicImageOff;
+
+    public Toggle soundButton;
+    public Image soundImageOn;
+    public Image soundImageOff;
+
     void Start()
     {
         if (!startScene)
@@ -38,6 +46,28 @@ public class UIManager : MonoBehaviour
                 scoreText.text = "Score:\n" + gm.score + "\nHighScore:\n" + gm.highScore;
             }
             boostBar.value = gm.boostAmount;
+        }
+
+        if (musicButton.isOn)
+        {
+            musicImageOn.enabled = true;
+            musicImageOff.enabled = false;
+        }
+        else
+        {
+            musicImageOn.enabled = false;
+            musicImageOff.enabled = true;
+        }
+
+        if (soundButton.isOn)
+        {
+            soundImageOn.enabled = true;
+            soundImageOff.enabled = false;
+        }
+        else
+        {
+            soundImageOn.enabled = false;
+            soundImageOff.enabled = true;
         }
     }
 

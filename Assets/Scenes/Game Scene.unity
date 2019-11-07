@@ -3323,7 +3323,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2068104173}
   toggleTransition: 0
-  graphic: {fileID: 585671402}
+  graphic: {fileID: 0}
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
@@ -3470,6 +3470,12 @@ MonoBehaviour:
   gamePanel: {fileID: 432242291}
   pausePanel: {fileID: 896207279}
   gameOverPanel: {fileID: 491714401}
+  musicButton: {fileID: 1951068423}
+  musicImageOn: {fileID: 158330716}
+  musicImageOff: {fileID: 540048257}
+  soundButton: {fileID: 1354682296}
+  soundImageOn: {fileID: 1306516007}
+  soundImageOff: {fileID: 585671402}
 --- !u!114 &1382181899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4385,7 +4391,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1019071603}
   toggleTransition: 0
-  graphic: {fileID: 540048257}
+  graphic: {fileID: 0}
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
