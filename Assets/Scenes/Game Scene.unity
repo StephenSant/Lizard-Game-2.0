@@ -3467,7 +3467,6 @@ MonoBehaviour:
   musicButton: {fileID: 1951068423}
   soundButton: {fileID: 1354682296}
   fadeImage: {fileID: 960373853}
-  fadeAnimator: {fileID: 1382181900}
 --- !u!4 &1382181895
 Transform:
   m_ObjectHideFlags: 0
@@ -3556,6 +3555,7 @@ MonoBehaviour:
   soundImageOff: {fileID: 585671402}
   fadeOutCompleted: 0
   fadeInCompleted: 0
+  fadeAnimator: {fileID: 1382181900}
 --- !u!114 &1382181899
 MonoBehaviour:
   m_ObjectHideFlags: 0

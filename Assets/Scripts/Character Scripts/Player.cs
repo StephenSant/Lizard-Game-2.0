@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
         Rotate();
 
-#if (UNITY_EDITOR || UNITY_STANDALONE)
+#if UNITY_EDITOR || UNITY_STANDALONE|| UNITY_WEBGL
         inputAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 #else
         inputAxis = new Vector2(gm.horizontalInput, gm.verticalInput);

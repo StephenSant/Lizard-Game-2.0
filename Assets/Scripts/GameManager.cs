@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
     public Toggle soundButton;
 
     public Image fadeImage;
-    public Animator fadeAnimator;
 
     public void Save()
     {
@@ -84,11 +83,11 @@ public class GameManager : MonoBehaviour
         bugSpawner = GetComponent<BugSpawner>();
         touchInputs = GetComponent<TouchInputs>();
 
-#if (UNITY_EDITOR || UNITY_STANDALONE || Unity_WebGL)
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBGL
         pauseButton.transform.SetParent(uIPanel.transform);
         Destroy(touchInputObject);
 #endif
-#if (UNITY_IOS || UNITY_ANDROID)
+#if UNITY_IOS || UNITY_ANDROID
         Destroy(instructions);
 #endif 
     }
@@ -101,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Starting()
     {
-environmentGenerator.PlaceObsticals();
+        environmentGenerator.PlaceObsticals();
         Load();
         yield return new WaitUntil(() => uIManager.fadeInCompleted);
         Time.timeScale = 1;
@@ -118,7 +117,7 @@ environmentGenerator.PlaceObsticals();
         horizontalInput = touchInputs.horizontalInput;
         verticalInput = touchInputs.verticalInput;
 
-#if (!UNITY_IOS || !UNITY_ANDROID)
+#if !UNITY_IOS || !UNITY_ANDROID
         if (score > 5)
         { Destroy(instructions); }
 #endif

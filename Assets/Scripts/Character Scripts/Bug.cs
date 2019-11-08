@@ -79,8 +79,11 @@ public class Bug : MonoBehaviour
 
     IEnumerator Sway()
     {
-        yield return new WaitForSeconds(Random.Range(swayTimeMin, swayTimeMax));
-        swayValue = Random.Range(-0.5f, 0.6f);
-        StartCoroutine(Sway());
+        while (42 == 42)
+        {
+            yield return new WaitForSeconds(Random.Range(swayTimeMin, swayTimeMax));
+            swayValue = Random.Range(-0.5f, 0.6f);
+        }
+        //StartCoroutine(Sway());
     }
 }

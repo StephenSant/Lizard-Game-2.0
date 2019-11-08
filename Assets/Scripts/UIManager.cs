@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
 
     int sceneToGoTo;
 
+    public Animator fadeAnimator;
+
     void Start()
     {
         if (!startScene)
@@ -51,28 +53,27 @@ public class UIManager : MonoBehaviour
                 scoreText.text = "Score:\n" + gm.score + "\nHighScore:\n" + gm.highScore;
             }
             boostBar.value = gm.boostAmount;
-        }
+            if (musicButton.isOn)
+            {
+                musicImageOn.enabled = true;
+                musicImageOff.enabled = false;
+            }
+            else
+            {
+                musicImageOn.enabled = false;
+                musicImageOff.enabled = true;
+            }
 
-        if (musicButton.isOn)
-        {
-            musicImageOn.enabled = true;
-            musicImageOff.enabled = false;
-        }
-        else
-        {
-            musicImageOn.enabled = false;
-            musicImageOff.enabled = true;
-        }
-
-        if (soundButton.isOn)
-        {
-            soundImageOn.enabled = true;
-            soundImageOff.enabled = false;
-        }
-        else
-        {
-            soundImageOn.enabled = false;
-            soundImageOff.enabled = true;
+            if (soundButton.isOn)
+            {
+                soundImageOn.enabled = true;
+                soundImageOff.enabled = false;
+            }
+            else
+            {
+                soundImageOn.enabled = false;
+                soundImageOff.enabled = true;
+            }
         }
 
         if (fadeOutCompleted)
@@ -126,7 +127,6 @@ public class UIManager : MonoBehaviour
     public void GoToScene(int scene)
     {
         sceneToGoTo = scene;
-        gm.fadeAnimator.SetTrigger("FadeOut");
-        
+        fadeAnimator.SetTrigger("FadeOut");
     }
 }
