@@ -39,11 +39,16 @@ public class GameManager : MonoBehaviour
     public Toggle musicButton;
     public Toggle soundButton;
 
+    public Image fadeImage;
+    public Animator fadeAnimator;
+
     public void Save()
     {
         SaveData saveData = new SaveData
         {
-            highScore = instance.highScore, music = instance.music, sound = instance.sound
+            highScore = instance.highScore,
+            music = instance.music,
+            sound = instance.sound
         };
         json = JsonUtility.ToJson(saveData);
         File.WriteAllText(Application.dataPath + "/save.txt", json);
@@ -91,12 +96,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        environmentGenerator.PlaceObsticals();
-        Load();
-        if (music)
-        {
+        StartCoroutine(Starting());
+    }
 
-        }
+    IEnumerator Starting()
+    {
+environmentGenerator.PlaceObsticals();
+        Load();
+        yield return new WaitUntil(() => uIManager.fadeInCompleted);
         Time.timeScale = 1;
     }
 

@@ -25,6 +25,11 @@ public class UIManager : MonoBehaviour
     public Image soundImageOn;
     public Image soundImageOff;
 
+    public bool fadeOutCompleted;
+    public bool fadeInCompleted;
+
+    int sceneToGoTo;
+
     void Start()
     {
         if (!startScene)
@@ -69,6 +74,11 @@ public class UIManager : MonoBehaviour
             soundImageOn.enabled = false;
             soundImageOff.enabled = true;
         }
+
+        if (fadeOutCompleted)
+        {
+            SceneManager.LoadScene(sceneToGoTo);
+        }
     }
 
     bool paused;
@@ -97,15 +107,26 @@ public class UIManager : MonoBehaviour
     {
         if (!startScene)
         {
-            Time.timeScale = openPanel == true ? 0 : 1;
+            //Time.timeScale = openPanel == true ? 0 : 1;
             gameOverPanel.SetActive(openPanel);
             gamePanel.SetActive(!openPanel);
             pausePanel.SetActive(false);
         }
     }
 
+    public void OnFadeOutComplete()
+    {
+        fadeOutCompleted = true;
+    }
+    public void OnFadeInComplete()
+    {
+        fadeInCompleted = true;
+    }
+
     public void GoToScene(int scene)
     {
-        SceneManager.LoadScene(scene);
+        sceneToGoTo = scene;
+        gm.fadeAnimator.SetTrigger("FadeOut");
+        
     }
 }
