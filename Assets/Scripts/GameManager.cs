@@ -6,40 +6,46 @@ using System.IO;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject touchInputObject;
-    public GameObject pauseButton;
-    public GameObject uIPanel;
-    public GameObject instructions;
-
+    [Header("Game Management")]
     public int score;
     public int highScore;
     public bool gameOver;
 
-    public bool music;
-    public bool sound;
-
-    public float boostAmount;
-
-    public static GameManager instance = null;
-
-    private UIManager uIManager;
-    private EnvironmentGenerator environmentGenerator;
-    private BugSpawner bugSpawner;
-    private TouchInputs touchInputs;
-
-    public float verticalInput;
-    public float horizontalInput;
-
-    public bool boostActive;
-
-    public bool playerHidden = true;
-
-    string json;
-
+    [Header("UI/Display")]
+    public GameObject touchInputObject;
+    public GameObject pauseButton;
+    public GameObject uIPanel;
+    public GameObject instructions;
     public Toggle musicButton;
     public Toggle soundButton;
-
     public Image fadeImage;
+
+    [Header("References")]
+    public static GameManager instance = null;
+    public UIManager uIManager;
+    public EnvironmentGenerator environmentGenerator;
+    public BugSpawner bugSpawner;
+
+    [Header("Input")]
+    public float verticalInput;
+    public float horizontalInput;
+    public TouchInputs touchInputs;
+
+    [Header("Saving")]
+    public string saveLocation = "/SaveData.txt";
+    string json;
+
+    [Header("Player")]
+    public bool boostActive;
+    public float boostAmount;
+    public bool playerHidden = true;
+
+    [Header("Audio")]
+    public bool music;
+    public bool sound;
+    public AudioSource gameOverSound;
+    public AudioSource clickSound;
+
 
     public void Save()
     {
@@ -50,14 +56,14 @@ public class GameManager : MonoBehaviour
             sound = instance.sound
         };
         json = JsonUtility.ToJson(saveData);
-        File.WriteAllText(Application.dataPath + "/save.txt", json);
+        File.WriteAllText(Application.dataPath + saveLocation, json);
     }
 
     void Load()
     {
-        if (File.Exists(Application.dataPath + "/save.txt"))
+        if (File.Exists(Application.dataPath + saveLocation))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
+            string saveString = File.ReadAllText(Application.dataPath + saveLocation);
             SaveData loadedData = JsonUtility.FromJson<SaveData>(saveString);
             instance.highScore = loadedData.highScore;
             music = loadedData.music;
@@ -78,18 +84,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        uIManager = GetComponent<UIManager>();
-        environmentGenerator = GetComponent<EnvironmentGenerator>();
-        bugSpawner = GetComponent<BugSpawner>();
-        touchInputs = GetComponent<TouchInputs>();
-
-#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBGL
+        #if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBGL
         pauseButton.transform.SetParent(uIPanel.transform);
         Destroy(touchInputObject);
-#endif
-#if UNITY_IOS || UNITY_ANDROID
+        #endif
+        #if UNITY_IOS || UNITY_ANDROID
         Destroy(instructions);
-#endif 
+        #endif 
     }
 
 
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        gameOverSound.Play();
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
         if (score > highScore)
@@ -133,6 +135,7 @@ public class GameManager : MonoBehaviour
         }
         Save();
         uIManager.finalScoreText.text = "Your score: " + score + "\nHigh score: " + highScore;
+
     }
 
     public void SetSound()
@@ -145,6 +148,11 @@ public class GameManager : MonoBehaviour
     {
         music = musicButton.isOn;
         Save();
+    }
+
+    public void Click()
+    {
+        clickSound.Play();
     }
 }
 

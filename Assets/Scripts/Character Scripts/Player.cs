@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     public SpriteRenderer playerSprite;
     public ParticleSystem boostParticles;
 
+    [Header("Audio")]
+    public AudioSource eatSound;
+
     private void Start()
     {
         curBoost = maxBoost;
@@ -132,6 +135,7 @@ public class Player : MonoBehaviour
         }
         if (other.CompareTag("Bug"))
         {
+            eatSound.Play();
             Bug bug = other.GetComponent<Bug>();
             gm.score += bug.pointsToGive;
             Destroy(other.gameObject);

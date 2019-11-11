@@ -1,1 +1,0 @@
-{"highScore":75,"music":false,"sound":false}
