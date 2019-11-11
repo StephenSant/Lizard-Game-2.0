@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: b9e5a2d9dbabad342b6dc12fc5995704
+guid: 250252205cf3c574b88ef7c6e8829d03
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Music_On
-    21300002: Music_Off
-    21300004: Sound_On
-    21300006: Sound_Off
-    21300008: Button
-    21300010: Button_Pause
-    21300012: Panel
+    21300000: GUI_0
+    21300002: GUI_1
+    21300004: GUI_2
+    21300006: GUI_3
+    21300008: GUI_4
+    21300010: GUI_5
+    21300012: GUI_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -78,7 +78,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -91,7 +91,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Music_On
+      name: GUI_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,13 +105,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cf15f3a37aeea049b2b26a4c3b60e85
+      spriteID: 2e5f8303002a4484193b48b29919a90a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Music_Off
+      name: GUI_1
       rect:
         serializedVersion: 2
         x: 16
@@ -125,13 +125,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37255e565df39764c95938e4aa312dae
+      spriteID: f99b4f8089635af4d961ec402de32e17
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sound_On
+      name: GUI_2
       rect:
         serializedVersion: 2
         x: 32
@@ -145,13 +145,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcae3746414c1e24990eacc45f90f8ba
+      spriteID: fec2f220349864b47a9364bd4da78b92
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sound_Off
+      name: GUI_3
       rect:
         serializedVersion: 2
         x: 0
@@ -165,13 +165,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45575e4c713351a4aa8cd338634d3f7c
+      spriteID: 0bec425db99aea1488b981b69d62b44f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button
+      name: GUI_4
       rect:
         serializedVersion: 2
         x: 16
@@ -185,13 +185,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e83c80fb54227e4fb058956fe5f865c
+      spriteID: 25916b6919be6f94eb2646710c00ae84
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_Pause
+      name: GUI_5
       rect:
         serializedVersion: 2
         x: 32
@@ -205,13 +205,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 058092c7f0dd5ec43b2157ef6d8338ec
+      spriteID: ff5feeef535c8d24f8e696bfd60d917d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Panel
+      name: GUI_6
       rect:
         serializedVersion: 2
         x: 0
@@ -220,12 +220,12 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 2, z: 2, w: 2}
+      border: {x: 3, y: 3, z: 3, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 339e07f6914e9f4498453383d4d98a55
+      spriteID: ba9b095332c4eb849a6087ef7a07eabf
       vertices: []
       indices: 
       edges: []
@@ -233,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c1cb8f93ee53c7b4ca0baf58fbf69aeb
+    spriteID: 21f790f004a2ba34f8c90680ae26bdde
     vertices: []
     indices: 
     edges: []
