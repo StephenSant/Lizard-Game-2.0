@@ -140,8 +140,8 @@ GameObject:
   - component: {fileID: 7572664715235085976}
   - component: {fileID: 7572664715235085959}
   - component: {fileID: 7572664715235085978}
-  - component: {fileID: 7572664715235085977}
   - component: {fileID: 3127263135469295451}
+  - component: {fileID: 1951901723312957150}
   m_Layer: 8
   m_Name: Beetle
   m_TagString: Bug
@@ -203,33 +203,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7572664715235085977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7572664715235085958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db048a3d82a17814382df08f66c7322e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 120
-  rotSpeed: 150
-  wallSensorLength: 1
-  wallSensorSeperation: 25
-  hitLayer:
-    serializedVersion: 2
-    m_Bits: 1025
-  rightWallSensor: {fileID: 7572664714982613211}
-  leftWallSensor: {fileID: 7572664715944098293}
-  swayTimeMin: 0.5
-  swayTimeMax: 1.5
-  swayValue: 0
-  hitRight: 0
-  hitLeft: 0
-  pointsToGive: 10
 --- !u!58 &3127263135469295451
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -246,6 +219,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.325
+--- !u!114 &1951901723312957150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572664715235085958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cafab710e1ff4b89309f6c2d5f1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToGive: 10
+  moveSpeed: 115
+  rotSpeed: 150
+  wallSensorLength: 1
+  wallSensorSeperation: 10
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  rightWallSensor: {fileID: 7572664714982613211}
+  leftWallSensor: {fileID: 7572664715944098293}
+  swayTimeMin: 0.5
+  swayTimeMax: 1.5
+  swayValue: 0
+  hitRight: 0
+  hitLeft: 0
 --- !u!1 &7572664715944098292
 GameObject:
   m_ObjectHideFlags: 0

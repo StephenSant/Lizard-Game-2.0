@@ -140,8 +140,8 @@ GameObject:
   - component: {fileID: 8756512166429174766}
   - component: {fileID: 8756512166429174769}
   - component: {fileID: 8756512166429174764}
-  - component: {fileID: 8756512166429174767}
   - component: {fileID: 4320260756647916077}
+  - component: {fileID: 308479250964876839}
   m_Layer: 8
   m_Name: Ant
   m_TagString: Bug
@@ -203,33 +203,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8756512166429174767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8756512166429174768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db048a3d82a17814382df08f66c7322e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 100
-  rotSpeed: 150
-  wallSensorLength: 1
-  wallSensorSeperation: 25
-  hitLayer:
-    serializedVersion: 2
-    m_Bits: 1025
-  rightWallSensor: {fileID: 8756512166144705965}
-  leftWallSensor: {fileID: 8756512166726999171}
-  swayTimeMin: 0.5
-  swayTimeMax: 1.5
-  swayValue: 0
-  hitRight: 0
-  hitLeft: 0
-  pointsToGive: 1
 --- !u!58 &4320260756647916077
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -246,6 +219,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.225
+--- !u!114 &308479250964876839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8756512166429174768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8f0e4c5dcf0074da3af70f8426c200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToGive: 1
+  moveSpeed: 115
+  rotSpeed: 150
+  wallSensorLength: 1
+  wallSensorSeperation: 10
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  rightWallSensor: {fileID: 8756512166144705965}
+  leftWallSensor: {fileID: 8756512166726999171}
+  swayTimeMin: 0.5
+  swayTimeMax: 1.5
+  swayValue: 0
+  hitRight: 0
+  hitLeft: 0
 --- !u!1 &8756512166726999170
 GameObject:
   m_ObjectHideFlags: 0

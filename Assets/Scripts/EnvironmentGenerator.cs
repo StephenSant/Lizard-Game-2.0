@@ -7,9 +7,6 @@ public class EnvironmentGenerator : MonoBehaviour
 
     public GameObject[] obsticalsPrefabs;
 
-    int squareIndex;
-    //game size 18 x 18
-    Vector2[] spaces = new Vector2[17 * 17];
     public void PlaceObsticals()
     {
 
@@ -23,10 +20,8 @@ public class EnvironmentGenerator : MonoBehaviour
                     if (x != 8 && y != 8)
                     {
                         CreateObject(new Vector2(x, y));
-                        spaces[squareIndex] = new Vector2(x, y);
                     }
                 }
-                squareIndex++;
             }
         }
     }
