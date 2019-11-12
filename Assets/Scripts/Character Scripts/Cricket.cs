@@ -25,6 +25,7 @@ public class Cricket : Bug
 
     void Update()
     {
+        base.Update();
         CheckAhead();
     }
 

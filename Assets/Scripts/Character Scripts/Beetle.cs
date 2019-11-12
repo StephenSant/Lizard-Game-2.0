@@ -45,7 +45,7 @@ public class Beetle : Bug
     }
     private void Update()
     {
-
+        base.Update();
         if (hitRight && hitLeft)
         {
             rigid.velocity = Vector2.zero;
@@ -66,18 +66,11 @@ public class Beetle : Bug
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
             transform.Rotate(Vector3.forward * rotSpeed * swayValue * Time.deltaTime);
         }
-
-        #region Destory Off Screen
-        if (transform.position.x > 12 || transform.position.y > 12 || transform.position.x < -12 || transform.position.y < -12)
-        {
-            Destroy(gameObject);
-        }
-        #endregion
     }
 
     IEnumerator Sway()
     {
-        while (42 == 42)
+        while (true)
         {
             yield return new WaitForSeconds(Random.Range(swayTimeMin, swayTimeMax));
             swayValue = Random.Range(-0.5f, 0.6f);

@@ -3568,11 +3568,11 @@ MonoBehaviour:
   - bugPrefab: {fileID: 7572664715235085958, guid: 50021230dbcf86f42a90f993e87bb783,
       type: 3}
     spawnRate: 60
-    entryScore: 20
+    entryScore: 30
   - bugPrefab: {fileID: 4628577406978372722, guid: 907840168314c84429331246c8849a65,
       type: 3}
-    spawnRate: 0.25
-    entryScore: 0
+    spawnRate: 10
+    entryScore: 10
   bugEntryIndex: 0
 --- !u!114 &1382181898
 MonoBehaviour:

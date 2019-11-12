@@ -29,18 +29,19 @@ public class BugSpawner : MonoBehaviour
     {
         if (bugEntryIndex == 0)
         {
-            StartCoroutine(SpawnAnt());
+            StartCoroutine(SpawnBug(0));
             bugEntryIndex++;
         }
         if (gm.score >= bugs[1].entryScore && bugEntryIndex < 2)
         {
-            StartCoroutine(SpawnBeetle());
+            StartCoroutine(SpawnBug(1));
             bugEntryIndex++;
         }
-
-
-
-
+        if (gm.score >= bugs[2].entryScore && bugEntryIndex < 3)
+        {
+            StartCoroutine(SpawnBug(2));
+            bugEntryIndex++;
+        }
 
     }
 
@@ -56,22 +57,15 @@ public class BugSpawner : MonoBehaviour
         bugSpawners[3].rotation = Quaternion.Euler(Vector3.forward * 90);
     }
 
-    IEnumerator SpawnAnt()
+    IEnumerator SpawnBug(int bugIndex)
     {
         Transform bugSpawnPoint = bugSpawners[Random.Range(0, bugSpawners.Length)];
-        Instantiate(bugs[0].bugPrefab, bugSpawnPoint.position, bugSpawnPoint.rotation);
-        yield return new WaitForSeconds(bugs[0].spawnRate);
-        StartCoroutine(SpawnAnt());
+        Instantiate(bugs[bugIndex].bugPrefab, bugSpawnPoint.position, bugSpawnPoint.rotation);
+        yield return new WaitForSeconds(bugs[bugIndex].spawnRate);
+        StartCoroutine(SpawnBug(bugIndex));
         PlaceSpawners();
     }
-    IEnumerator SpawnBeetle()
-    {
-        Transform bugSpawnPoint = bugSpawners[Random.Range(0, bugSpawners.Length)];
-        Instantiate(bugs[1].bugPrefab, bugSpawnPoint.position, bugSpawnPoint.rotation);
-        yield return new WaitForSeconds(bugs[1].spawnRate);
-        StartCoroutine(SpawnBeetle());
-        PlaceSpawners();
-    }
+
 }
 [System.Serializable]
 public struct Bugs
