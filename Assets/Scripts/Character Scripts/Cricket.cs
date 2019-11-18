@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cricket : Bug
 {
+    public float moveSpeed;
+
     public int jumpDist;
     public int jumpDistMax;
     public LayerMask obsticalLayer;
@@ -11,11 +13,16 @@ public class Cricket : Bug
 
     public bool pathClear;
 
-    //public Collider2D collider;
+    public Collider2D hitBox;
+    public Rigidbody2D rigid;
+
+    public bool atPosition;
+    Vector3 landingPos;
+    bool moveForward;
 
     void CheckAhead()
     {
-        pathClear = !Physics2D.OverlapCircle(transform.position + (transform.up*jumpDist),0.5f,obsticalLayer);
+        pathClear = !Physics2D.OverlapCircle(transform.position + (transform.up * jumpDist), 0.5f, obsticalLayer);
     }
 
     void Start()
@@ -27,13 +34,32 @@ public class Cricket : Bug
     {
         base.Update();
         CheckAhead();
+        if (moveForward)
+        {
+            if (!((transform.position - landingPos).magnitude <= 0.1f))
+            {
+                rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
+                atPosition = false;
+            }
+            else
+            {
+                atPosition = true;
+                rigid.velocity = Vector3.zero;
+                hitBox.enabled = true;
+            }
+        }
     }
 
     IEnumerator Jump()
     {
         if (pathClear)
-        {
-            transform.position += transform.up * jumpDist;
+        { 
+            hitBox.enabled = false;
+            Vector3 landingPos = transform.position + transform.up * jumpDist;
+            moveForward = true;
+            yield return new WaitUntil(() => atPosition);
+            moveForward = false;
+            yield return new WaitForSeconds(waitTime);
         }
         else
         {
@@ -54,7 +80,8 @@ public class Cricket : Bug
                 }
             }
         }
-        yield return new WaitForSeconds(waitTime);
+        
+        
         StartCoroutine(Jump());
     }
 }

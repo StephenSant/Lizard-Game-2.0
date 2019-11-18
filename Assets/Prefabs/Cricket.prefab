@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4628577406978372720}
   - component: {fileID: 4628577406978372721}
   - component: {fileID: 4628577406978372726}
+  - component: {fileID: 8377902405896808895}
   m_Layer: 0
   m_Name: Cricket
   m_TagString: Bug
@@ -94,13 +95,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToGive: 1
+  moveSpeed: 150
   jumpDist: 2
   jumpDistMax: 3
   obsticalLayer:
     serializedVersion: 2
     m_Bits: 4096
-  waitTime: 0.75
+  waitTime: 2.5
   pathClear: 0
+  hitBox: {fileID: 4628577406978372726}
+  rigid: {fileID: 8377902405896808895}
+  atPosition: 0
 --- !u!58 &4628577406978372726
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -117,3 +122,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &8377902405896808895
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628577406978372722}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
