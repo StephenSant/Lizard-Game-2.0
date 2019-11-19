@@ -47,13 +47,13 @@ public class BugSpawner : MonoBehaviour
 
     public void PlaceSpawners()
     {
-        bugSpawners[0].position = new Vector3(Random.Range(-8, 9), -10, 0);
+        bugSpawners[0].position = new Vector3(Random.Range(-7, 8), -10, 0);
         bugSpawners[0].rotation = Quaternion.Euler(Vector3.forward * 0);
-        bugSpawners[1].position = new Vector3(-10, Random.Range(-8, 9), 0);
+        bugSpawners[1].position = new Vector3(-10, Random.Range(-7, 8), 0);
         bugSpawners[1].rotation = Quaternion.Euler(Vector3.forward * -90);
-        bugSpawners[2].position = new Vector3(Random.Range(-8, 9), 10, 0);
+        bugSpawners[2].position = new Vector3(Random.Range(-7, 8), 10, 0);
         bugSpawners[2].rotation = Quaternion.Euler(Vector3.forward * 180);
-        bugSpawners[3].position = new Vector3(10, Random.Range(-8, 9), 0);
+        bugSpawners[3].position = new Vector3(10, Random.Range(-7, 8), 0);
         bugSpawners[3].rotation = Quaternion.Euler(Vector3.forward * 90);
     }
 
