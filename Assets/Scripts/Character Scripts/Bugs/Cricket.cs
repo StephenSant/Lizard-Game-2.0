@@ -17,7 +17,9 @@ public class Cricket : Bug
     public Rigidbody2D rigid;
 
     Vector3 landingPos;
+    Vector3 halfWayPos;
     bool moveForward;
+    bool goingUp;
 
     public Sprite landedSprite;
     public Sprite jumpSprite;
@@ -42,15 +44,22 @@ public class Cricket : Bug
         {
             rigid.velocity = transform.up * Time.deltaTime * moveSpeed;
             hitBox.enabled = false;
-
-
+            if (goingUp && spriteRenderer.transform.localScale.x <= 2)
+            {
+                spriteRenderer.transform.localScale += Vector3.one*1f * Time.deltaTime;
+            }
+            else
+            {
+                if (spriteRenderer.transform.localScale.x >= 1.25f)
+                {
+                    spriteRenderer.transform.localScale += Vector3.one * -0.5f * Time.deltaTime;
+                }
+            }
         }
         else
         {
             rigid.velocity = Vector3.zero;
             hitBox.enabled = true;
-
-
         }
     }
 
@@ -58,12 +67,15 @@ public class Cricket : Bug
     {
         if (pathClear)
         {
-
             yield return new WaitForFixedUpdate();
             transform.position = transform.position + transform.forward * -1.25f;
             spriteRenderer.sprite = jumpSprite;
             landingPos = transform.position + transform.up * jumpDist;
+            halfWayPos = transform.position + transform.up * (jumpDist / 2);
             moveForward = true;
+            goingUp = true;
+            yield return new WaitUntil(() => ((transform.position - halfWayPos).magnitude <= 0.1f));
+            goingUp = false;
             yield return new WaitUntil(() => ((transform.position - landingPos).magnitude <= 0.1f));
             transform.position = transform.position + transform.forward * 1.25f;
             spriteRenderer.sprite = landedSprite;
