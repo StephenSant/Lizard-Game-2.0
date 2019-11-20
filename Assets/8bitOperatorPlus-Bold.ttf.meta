@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5e5e286d64e91a4ebb8a19295b5f634
+guid: 099612efc345f894281b7c3cf3b0b395
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,11 +8,11 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: ArcadeClassic
+  fontName: 8-bit Operator+
   fontNames:
-  - ArcadeClassic
+  - 8-bit Operator+
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 68eb575c39c8b044a9fadbd7df5b7689, type: 3}
+  - {fileID: 12800000, guid: 9bb5bfea261718948ba4070c5697b975, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
