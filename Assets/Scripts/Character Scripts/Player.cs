@@ -132,6 +132,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Plant"))
         {
             hidden = true;
+            other.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.25f);
         }
         if (other.CompareTag("Bug"))
         {
@@ -150,18 +151,12 @@ public class Player : MonoBehaviour
             }
         }
     }
-    void OnTrigger2D(Collider2D other)
-    {
-        if (other.CompareTag("Plant"))
-        {
-            hidden = true;
-        }
-    }
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Plant"))
         {
             hidden = false;
+            other.GetComponent<SpriteRenderer>().color = new Color(1,1, 1, 1);
         }
     }
 }

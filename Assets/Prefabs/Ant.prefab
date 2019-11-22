@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8756512166144705964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8756512166429174766}
@@ -234,11 +234,11 @@ MonoBehaviour:
   pointsToGive: 1
   moveSpeed: 115
   rotSpeed: 150
-  wallSensorLength: 1
-  wallSensorSeperation: 10
+  wallSensorLength: 2
+  wallSensorSeperation: 5
   hitLayer:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 5120
   rightWallSensor: {fileID: 8756512166144705965}
   leftWallSensor: {fileID: 8756512166726999171}
   swayTimeMin: 0.5
@@ -270,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8756512166726999170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8756512166429174766}
