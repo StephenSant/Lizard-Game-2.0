@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public UIManager uIManager;
     public EnvironmentGenerator environmentGenerator;
     public BugSpawner bugSpawner;
+    public AudioManager audioManager;
 
     [Header("Input")]
     public float verticalInput;
@@ -40,20 +41,14 @@ public class GameManager : MonoBehaviour
     public float boostAmount;
     public bool playerHidden = true;
 
-    [Header("Audio")]
-    public bool music;
-    public bool sound;
-    public AudioSource gameOverSound;
-    public AudioSource clickSound;
-
 
     public void Save()
     {
         SaveData saveData = new SaveData
         {
             highScore = instance.highScore,
-            music = instance.music,
-            sound = instance.sound
+            music = musicButton.isOn,
+            sound = soundButton.isOn
         };
         json = JsonUtility.ToJson(saveData);
         File.WriteAllText(Application.dataPath + saveLocation, json);
@@ -66,10 +61,8 @@ public class GameManager : MonoBehaviour
             string saveString = File.ReadAllText(Application.dataPath + saveLocation);
             SaveData loadedData = JsonUtility.FromJson<SaveData>(saveString);
             instance.highScore = loadedData.highScore;
-            music = loadedData.music;
-            sound = loadedData.sound;
-            musicButton.isOn = music;
-            soundButton.isOn = sound;
+            musicButton.isOn = loadedData.music;
+            soundButton.isOn = loadedData.sound;
         }
     }
 
@@ -109,11 +102,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            uIManager.TogglePause();
-        }
         boostActive = touchInputs.boostActive;
         horizontalInput = touchInputs.horizontalInput;
         verticalInput = touchInputs.verticalInput;
@@ -121,12 +109,17 @@ public class GameManager : MonoBehaviour
 #if !UNITY_IOS || !UNITY_ANDROID
         if (score > 5)
         { Destroy(instructions); }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            uIManager.TogglePause();
+        }
 #endif
+        
     }
 
     public void GameOver()
     {
-        gameOverSound.Play();
+        audioManager.PlaySound("Game Over");
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
         if (score > highScore)
@@ -140,19 +133,13 @@ public class GameManager : MonoBehaviour
 
     public void SetSound()
     {
-        sound = soundButton.isOn;
+        audioManager.UpdateSound(soundButton.isOn);
         Save();
     }
 
     public void SetMusic()
     {
-        music = musicButton.isOn;
         Save();
-    }
-
-    public void Click()
-    {
-        clickSound.Play();
     }
 }
 

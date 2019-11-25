@@ -20,9 +20,6 @@ public class Player : MonoBehaviour
     public SpriteRenderer playerSprite;
     public ParticleSystem boostParticles;
 
-    [Header("Audio")]
-    public AudioSource eatSound;
-
     private void Start()
     {
         curBoost = maxBoost;
@@ -60,6 +57,13 @@ public class Player : MonoBehaviour
         {
             Boost();
             animator.SetBool("Running", true);
+            Sound runSound;
+            runSound = System.Array.Find(gm.audioManager.sounds, sound => sound.name == "Run");
+            if (!runSound.source.isPlaying)
+            {
+                gm.audioManager.PlaySound("Run");
+            }
+
         }
         else
         {
@@ -90,8 +94,7 @@ public class Player : MonoBehaviour
 
         if (boosting && rigid.velocity.magnitude > 0.5f)
         {
-            
-            boostParticles.enableEmission=true;
+            boostParticles.enableEmission = true;
         }
         else { boostParticles.enableEmission = false; }
     }
@@ -136,7 +139,7 @@ public class Player : MonoBehaviour
         }
         if (other.CompareTag("Bug"))
         {
-            eatSound.Play();
+            gm.audioManager.PlaySound("Eat");
             Bug bug = other.GetComponent<Bug>();
             gm.score += bug.pointsToGive;
             Destroy(other.gameObject);
@@ -156,7 +159,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Plant"))
         {
             hidden = false;
-            other.GetComponent<SpriteRenderer>().color = new Color(1,1, 1, 1);
+            other.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
     }
 }
