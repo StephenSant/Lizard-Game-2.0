@@ -3057,7 +3057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.99388206, b: 0.6933962, a: 1}
+  m_Color: {r: 1, g: 0.9294118, b: 0.4039216, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3429,7 +3429,7 @@ GameObject:
   - component: {fileID: 1354682295}
   - component: {fileID: 1354682296}
   m_Layer: 5
-  m_Name: Music Toggle
+  m_Name: Sound Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3499,7 +3499,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1382181894}
-        m_MethodName: SetMusic
+        m_MethodName: SetSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3565,8 +3565,8 @@ MonoBehaviour:
   pauseButton: {fileID: 1793242760}
   uIPanel: {fileID: 432242291}
   instructions: {fileID: 97828194}
-  musicButton: {fileID: 1354682296}
-  soundButton: {fileID: 1951068423}
+  musicButton: {fileID: 1951068423}
+  soundButton: {fileID: 1354682296}
   fadeImage: {fileID: 960373853}
   uIManager: {fileID: 1382181898}
   environmentGenerator: {fileID: 1382181896}
@@ -3658,8 +3658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScene: 0
   boostBar: {fileID: 682842705}
-  boostReadyColor: {r: 1, g: 0.9921569, b: 0.6901961, a: 1}
-  boostChargingColor: {r: 0.86666673, g: 0.8588236, b: 0.6, a: 1}
+  boostReadyColor: {r: 1, g: 0.9294118, b: 0.4039216, a: 1}
+  boostChargingColor: {r: 1, g: 0.85098046, b: 0.4039216, a: 1}
   scoreText: {fileID: 537842400}
   finalScoreText: {fileID: 95711328}
   gamePanel: {fileID: 432242291}
@@ -3725,18 +3725,27 @@ MonoBehaviour:
   - name: Game Over
     clip: {fileID: 8300000, guid: 91626577c1345174e8f76e91ca5e2c09, type: 3}
     volume: 1
+    pitch: 1
     source: {fileID: 0}
   - name: Click
     clip: {fileID: 8300000, guid: 4d0c971839fbc9440b7302ad949cf693, type: 3}
     volume: 1
+    pitch: 1
     source: {fileID: 0}
-  - name: Eat
+  - name: Eat Ant
     clip: {fileID: 8300000, guid: 19bd3fdbec10d994fa8c3e0990f5a624, type: 3}
     volume: 1
+    pitch: 1
     source: {fileID: 0}
-  - name: Run
-    clip: {fileID: 8300000, guid: 07f338e38dc505547bcdfbc618b6cdfe, type: 3}
+  - name: Eat Cricket
+    clip: {fileID: 8300000, guid: 19bd3fdbec10d994fa8c3e0990f5a624, type: 3}
     volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+  - name: Eat Beetle
+    clip: {fileID: 8300000, guid: 19bd3fdbec10d994fa8c3e0990f5a624, type: 3}
+    volume: 1
+    pitch: 2
     source: {fileID: 0}
 --- !u!1 &1424434432
 GameObject:
@@ -4695,7 +4704,7 @@ GameObject:
   - component: {fileID: 1951068422}
   - component: {fileID: 1951068423}
   m_Layer: 5
-  m_Name: Sound Toggle
+  m_Name: Music Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4764,17 +4773,6 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1382181894}
-        m_MethodName: SetSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1382181903}
         m_MethodName: PlaySound
         m_Mode: 5
@@ -4784,17 +4782,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Click
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1382181903}
-        m_MethodName: UpdateSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,

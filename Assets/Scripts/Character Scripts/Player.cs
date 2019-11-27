@@ -59,9 +59,12 @@ public class Player : MonoBehaviour
             animator.SetBool("Running", true);
             Sound runSound;
             runSound = System.Array.Find(gm.audioManager.sounds, sound => sound.name == "Run");
-            if (!runSound.source.isPlaying)
+            if (runSound != null)
             {
-                gm.audioManager.PlaySound("Run");
+                if (!runSound.source.isPlaying)
+                {
+                    gm.audioManager.PlaySound("Run");
+                }
             }
 
         }
@@ -139,10 +142,22 @@ public class Player : MonoBehaviour
         }
         if (other.CompareTag("Bug"))
         {
-            gm.audioManager.PlaySound("Eat");
+            
             Bug bug = other.GetComponent<Bug>();
             gm.score += bug.pointsToGive;
             Destroy(other.gameObject);
+            if (other.GetComponent<Ant>())
+            {
+                gm.audioManager.PlaySound("Eat Ant");
+            }
+            else if (other.GetComponent<Cricket>())
+            {
+                gm.audioManager.PlaySound("Eat Cricket");
+            }
+            else if (other.GetComponent<Beetle>())
+            {
+                gm.audioManager.PlaySound("Eat Beetle");
+            }
         }
         if (!hidden)
         {
