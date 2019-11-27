@@ -20,9 +20,6 @@ public class Player : MonoBehaviour
     public SpriteRenderer playerSprite;
     public ParticleSystem boostParticles;
 
-    [Header("Audio")]
-    public AudioSource eatSound;
-
     private void Start()
     {
         curBoost = maxBoost;
@@ -60,6 +57,16 @@ public class Player : MonoBehaviour
         {
             Boost();
             animator.SetBool("Running", true);
+            Sound runSound;
+            runSound = System.Array.Find(gm.audioManager.sounds, sound => sound.name == "Run");
+            if (runSound != null)
+            {
+                if (!runSound.source.isPlaying)
+                {
+                    gm.audioManager.PlaySound("Run");
+                }
+            }
+
         }
         else
         {
@@ -90,10 +97,13 @@ public class Player : MonoBehaviour
 
         if (boosting && rigid.velocity.magnitude > 0.5f)
         {
-            
-            boostParticles.enableEmission=true;
+#pragma warning disable CS0618 // Type or member is obsolete
+            boostParticles.enableEmission = true;
+#pragma warning restore CS0618 // Type or member is obsolete
         }
+#pragma warning disable CS0618 // Type or member is obsolete
         else { boostParticles.enableEmission = false; }
+#pragma warning restore CS0618 // Type or member is obsolete
     }
 
 
@@ -132,13 +142,26 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Plant"))
         {
             hidden = true;
+            other.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.25f);
         }
         if (other.CompareTag("Bug"))
         {
-            eatSound.Play();
+            
             Bug bug = other.GetComponent<Bug>();
             gm.score += bug.pointsToGive;
             Destroy(other.gameObject);
+            if (other.GetComponent<Ant>())
+            {
+                gm.audioManager.PlaySound("Eat Ant");
+            }
+            else if (other.GetComponent<Cricket>())
+            {
+                gm.audioManager.PlaySound("Eat Cricket");
+            }
+            else if (other.GetComponent<Beetle>())
+            {
+                gm.audioManager.PlaySound("Eat Beetle");
+            }
         }
         if (!hidden)
         {
@@ -150,18 +173,12 @@ public class Player : MonoBehaviour
             }
         }
     }
-    void OnTrigger2D(Collider2D other)
-    {
-        if (other.CompareTag("Plant"))
-        {
-            hidden = true;
-        }
-    }
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Plant"))
         {
             hidden = false;
+            other.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
     }
 }

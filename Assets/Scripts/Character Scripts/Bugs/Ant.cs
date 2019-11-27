@@ -37,10 +37,10 @@ public class Ant : Bug
             rightWallSensor.localEulerAngles = Vector3.forward * -wallSensorSeperation;
         }
 
-        Debug.DrawRay(transform.position, rightWallSensor.transform.up * wallSensorLength, Color.red);
-        Debug.DrawRay(transform.position, leftWallSensor.transform.up * wallSensorLength, Color.red);
-        hitRight = Physics2D.Raycast(transform.position, rightWallSensor.transform.up, wallSensorLength, hitLayer);
-        hitLeft = Physics2D.Raycast(transform.position, leftWallSensor.transform.up, wallSensorLength, hitLayer);
+        Debug.DrawRay(rightWallSensor.transform.position, rightWallSensor.transform.up * wallSensorLength, Color.red);
+        Debug.DrawRay(leftWallSensor.transform.position, leftWallSensor.transform.up * wallSensorLength, Color.red);
+        hitRight = Physics2D.Raycast(rightWallSensor.transform.position, rightWallSensor.transform.up, wallSensorLength, hitLayer);
+        hitLeft = Physics2D.Raycast(leftWallSensor.transform.position, leftWallSensor.transform.up, wallSensorLength, hitLayer);
         #endregion
     }
     private void Update()

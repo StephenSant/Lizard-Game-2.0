@@ -398,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322633588}
   - component: {fileID: 322633587}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 354827165}
   - component: {fileID: 354827164}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 384532999}
   - component: {fileID: 384532998}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,9 +950,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: 1
+  boostBar: {fileID: 0}
+  boostReadyColor: {r: 0, g: 0, b: 0, a: 0}
+  boostChargingColor: {r: 0, g: 0, b: 0, a: 0}
   scoreText: {fileID: 0}
   finalScoreText: {fileID: 0}
-  boostBar: {fileID: 0}
   gamePanel: {fileID: 0}
   pausePanel: {fileID: 0}
   gameOverPanel: {fileID: 0}
@@ -1294,7 +1296,7 @@ GameObject:
   - component: {fileID: 895191370}
   - component: {fileID: 895191369}
   - component: {fileID: 895191368}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Boarders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1429,7 +1431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902210419}
   - component: {fileID: 902210418}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,7 +1737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1078192374}
   - component: {fileID: 1078192373}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2061,7 +2063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812017330}
   - component: {fileID: 1812017329}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2348,7 +2350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2050015913}
   - component: {fileID: 2050015912}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2427,7 +2429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080674720}
   - component: {fileID: 2080674719}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Borders_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
