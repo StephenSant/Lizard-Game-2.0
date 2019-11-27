@@ -97,9 +97,13 @@ public class Player : MonoBehaviour
 
         if (boosting && rigid.velocity.magnitude > 0.5f)
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             boostParticles.enableEmission = true;
+#pragma warning restore CS0618 // Type or member is obsolete
         }
+#pragma warning disable CS0618 // Type or member is obsolete
         else { boostParticles.enableEmission = false; }
+#pragma warning restore CS0618 // Type or member is obsolete
     }
 
 
