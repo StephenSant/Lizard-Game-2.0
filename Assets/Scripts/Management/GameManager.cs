@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int score;
     public int highScore;
     public bool gameOver;
+    public bool secondChance;
 
     [Header("UI/Display")]
     public GameObject touchInputObject;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     public EnvironmentGenerator environmentGenerator;
     public BugSpawner bugSpawner;
     public AudioManager audioManager;
+    public AdManager adManager;
 
     [Header("Input")]
     public float verticalInput;
@@ -40,6 +42,10 @@ public class GameManager : MonoBehaviour
     public bool boostActive;
     public float boostAmount;
     public bool playerHidden = true;
+
+    [Header("Bird")]
+    public GameObject bird;
+    public GameObject birdPoint;
 
 
     public void Save()
@@ -100,8 +106,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public IEnumerator Respawn()
+    {
+        bird.GetComponent<Bird>().player = birdPoint.transform;
+        Debug.Log("RESPAWNING");
+        yield return new WaitForEndOfFrame();
+    }
+
     private void Update()
     {
+        
+
         boostActive = touchInputs.boostActive;
         horizontalInput = touchInputs.horizontalInput;
         verticalInput = touchInputs.verticalInput;
@@ -117,9 +132,23 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void PlayerEaten()
+    {
+        uIManager.gamePanel.SetActive(false);
+        audioManager.PlaySound("Game Over");
+        if (secondChance)
+        {
+            GameOver();
+        }
+        else
+        {
+            uIManager.adPanel.SetActive(true);
+        }
+    }
+
     public void GameOver()
     {
-        audioManager.PlaySound("Game Over");
+        uIManager.adPanel.SetActive(false);
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
         if (score > highScore)

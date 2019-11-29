@@ -10,17 +10,13 @@ public class Bird : MonoBehaviour
     public float swayTimeMin = 0.5f;
     public float swayTimeMax = 2f;
     public float swayValue;
-
     public Transform player;
 
-    Rigidbody2D rigid;
+    public Animator animator;
+    public Rigidbody2D rigid;
 
     GameManager gm;
 
-    void Awake()
-    {
-        rigid = GetComponent<Rigidbody2D>();
-    }
     private void Start()
     {
         gm = GameManager.instance;
@@ -57,7 +53,7 @@ public class Bird : MonoBehaviour
                 }
             }
 
-            else if (gm.playerHidden || player == null)
+            else if (gm.playerHidden)
             {
                 if (gm.score > maxScore)
                 {
@@ -65,6 +61,14 @@ public class Bird : MonoBehaviour
                 }
                 else { Wander(gm.score); }
 
+            }
+            if (player == null)
+            {
+                Landed();
+            }
+            else
+            {
+                animator.SetBool("Landed", false);
             }
         }
         else
@@ -78,6 +82,12 @@ public class Bird : MonoBehaviour
                 Wander(maxScore);
             }
         }
+    }
+
+    void Landed()
+    {
+        animator.SetBool("Landed",true);
+        rigid.velocity = Vector3.zero;
     }
 
     Quaternion RotateTowards(Vector3 target, float rotationSpeed)

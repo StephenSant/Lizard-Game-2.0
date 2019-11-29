@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     public GameObject gamePanel;
     public GameObject pausePanel;
     public GameObject gameOverPanel;
+    public GameObject adPanel;
 
     [Header("Music Button")]
     public Toggle musicButton;
@@ -159,7 +160,6 @@ public class UIManager : MonoBehaviour
         {
             //Time.timeScale = openPanel == true ? 0 : 1;
             gameOverPanel.SetActive(openPanel);
-            gamePanel.SetActive(!openPanel);
             pausePanel.SetActive(false);
         }
     }

@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
 
             if (other.CompareTag("Bird"))
             {
-                gm.GameOver();
+                gm.PlayerEaten();
                 Destroy(gameObject);
             }
         }
