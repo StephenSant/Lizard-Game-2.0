@@ -689,10 +689,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
+  cloudProjectId: 7149c0b8-de54-4e01-82ad-e2ce24fe8882
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Backyard Buffet
+  organizationId: stephen-sant
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

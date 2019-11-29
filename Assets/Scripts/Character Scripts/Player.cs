@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        gm.uIManager.pointsIndicator.position = Camera.main.WorldToScreenPoint(transform.position);
+
         animator.SetFloat("Speed", inputAxis.magnitude);
 
         gm.playerHidden = hidden;
@@ -149,6 +151,7 @@ public class Player : MonoBehaviour
             
             Bug bug = other.GetComponent<Bug>();
             gm.score += bug.pointsToGive;
+            gm.uIManager.ShowPointsAdded(bug.pointsToGive);
             Destroy(other.gameObject);
             if (other.GetComponent<Ant>())
             {

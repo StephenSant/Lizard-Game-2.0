@@ -17,9 +17,11 @@ public class UIManager : MonoBehaviour
     public Color boostReadyColor;
     public Color boostChargingColor;
 
-    [Header("Score Board")]
+    [Header("Score")]
     public Text scoreText;
     public Text finalScoreText;
+    public RectTransform pointsIndicator;
+    public GameObject pointsAddedText;
 
     [Header("Panels")]
     public GameObject gamePanel;
@@ -63,6 +65,26 @@ public class UIManager : MonoBehaviour
             SceneManager.LoadScene(sceneToGoTo);
         }
     }
+
+    public void ShowPointsAdded(int pointsAdded)
+    {
+        GameObject text = Instantiate(pointsAddedText, pointsIndicator.position, pointsIndicator.rotation, gamePanel.transform);
+        text.GetComponent<Text>().text = "+ " + pointsAdded;
+        StartCoroutine(ShowPointsManager(text));
+    }
+
+    IEnumerator ShowPointsManager(GameObject text)
+    {
+        while (text.GetComponent<Text>().color.a >= 0)
+        {
+            text.transform.position += Vector3.up * 0.1f;
+            text.GetComponent<Text>().color -= new Color(0, 0, 0, 0.01f);
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitUntil(() => text.GetComponent<Text>().color.a <= 0);
+        Destroy(text);
+    }
+
     void OperateScoreBoard()
     {
         if (gm.score > gm.highScore)
@@ -73,7 +95,6 @@ public class UIManager : MonoBehaviour
         {
             scoreText.text = "Score:\n" + gm.score + "\nHighScore:\n" + gm.highScore;
         }
-
     }
     void OperateBoostBar()
     {

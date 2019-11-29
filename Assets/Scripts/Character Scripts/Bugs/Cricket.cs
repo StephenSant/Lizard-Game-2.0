@@ -35,7 +35,7 @@ public class Cricket : Bug
         StartCoroutine(Jump());
     }
 
-    void Update()
+    new void Update()
     {
         Debug.DrawLine(transform.position, landingPos);
         base.Update();

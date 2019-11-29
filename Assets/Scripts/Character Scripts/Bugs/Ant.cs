@@ -43,7 +43,7 @@ public class Ant : Bug
         hitLeft = Physics2D.Raycast(leftWallSensor.transform.position, leftWallSensor.transform.up, wallSensorLength, hitLayer);
         #endregion
     }
-    private void Update()
+    new void Update()
     {
         base.Update();
         if (hitRight && hitLeft)
