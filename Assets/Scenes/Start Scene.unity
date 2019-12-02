@@ -692,21 +692,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8850818433071633647, guid: 1540938f45d7e0941bd2d2a753e750f7,
-        type: 3}
-      propertyPath: swayTimeMax
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850818433071633647, guid: 1540938f45d7e0941bd2d2a753e750f7,
-        type: 3}
-      propertyPath: rotSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850818433071633647, guid: 1540938f45d7e0941bd2d2a753e750f7,
-        type: 3}
-      propertyPath: swayTimeMin
-      value: 0.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1540938f45d7e0941bd2d2a753e750f7, type: 3}
 --- !u!1001 &507920067
@@ -955,9 +940,12 @@ MonoBehaviour:
   boostChargingColor: {r: 0, g: 0, b: 0, a: 0}
   scoreText: {fileID: 0}
   finalScoreText: {fileID: 0}
+  pointsIndicator: {fileID: 0}
+  pointsAddedText: {fileID: 0}
   gamePanel: {fileID: 0}
   pausePanel: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  adPanel: {fileID: 0}
   musicButton: {fileID: 0}
   musicImageOn: {fileID: 0}
   musicImageOff: {fileID: 0}

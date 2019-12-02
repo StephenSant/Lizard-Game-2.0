@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
     string json;
 
     [Header("Player")]
+    public GameObject playerInst;
+    public GameObject playerPrefab;
+    public float invulnTime;
+    public LayerMask invulnLayer;
+    public LayerMask playerLayer;
     public bool boostActive;
     public float boostAmount;
     public bool playerHidden = true;
@@ -109,14 +114,28 @@ public class GameManager : MonoBehaviour
     public IEnumerator Respawn()
     {
         bird.GetComponent<Bird>().player = birdPoint.transform;
-        Debug.Log("RESPAWNING");
-        yield return new WaitForEndOfFrame();
+        playerInst = Instantiate(playerPrefab, Vector3.forward * 0.5f, transform.rotation, null);
+        playerInst.layer = LayermaskToLayer(invulnLayer);
+        yield return new WaitForSeconds(invulnTime);
+        playerInst.layer = LayermaskToLayer(playerLayer);
+        yield return new WaitUntil(() => (bird.transform.position - birdPoint.transform.position).magnitude <= 0.5f);
+        bird.GetComponent<Bird>().player = playerInst.transform;
+    }
+
+    public static int LayermaskToLayer(LayerMask layerMask)
+    {
+        int layerNumber = 0;
+        int layer = layerMask.value;
+        while (layer > 0)
+        {
+            layer = layer >> 1;
+            layerNumber++;
+        }
+        return layerNumber - 1;
     }
 
     private void Update()
     {
-        
-
         boostActive = touchInputs.boostActive;
         horizontalInput = touchInputs.horizontalInput;
         verticalInput = touchInputs.verticalInput;

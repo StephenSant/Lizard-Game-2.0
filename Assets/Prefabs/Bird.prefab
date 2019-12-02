@@ -48,11 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxScore: 50
   moveSpeedMultiplyer: 5
-  rotSpeed: 0.1
-  swayTimeMin: 0
-  swayTimeMax: 1
+  rotSpeed: 0.05
+  swayTimeMin: 0.25
+  swayTimeMax: 0.5
   swayValue: 0
   player: {fileID: 0}
+  animator: {fileID: 892337697}
+  rigid: {fileID: 8850818433071633618}
 --- !u!50 &8850818433071633618
 Rigidbody2D:
   serializedVersion: 4

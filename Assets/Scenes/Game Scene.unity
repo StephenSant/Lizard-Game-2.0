@@ -1607,6 +1607,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572905147}
   m_CullTransparentMesh: 0
+--- !u!1 &579995331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2445901979189967779, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2445901980098593685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &585671401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,6 +4058,16 @@ MonoBehaviour:
   horizontalInput: 0
   touchInputs: {fileID: 1382181899}
   saveLocation: /SaveData.txt
+  playerInst: {fileID: 579995331}
+  playerPrefab: {fileID: 2445901979189967779, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
+    type: 3}
+  invulnTime: 3.5
+  invulnLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   boostActive: 0
   boostAmount: 0
   playerHidden: 0
