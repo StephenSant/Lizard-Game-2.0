@@ -1,1 +1,1 @@
-{"highScore":73,"music":true,"sound":true}
+{"highScore":91,"music":true,"sound":true}

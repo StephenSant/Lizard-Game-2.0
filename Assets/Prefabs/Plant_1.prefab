@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8838008752756790326}
   - component: {fileID: 8838008752756790321}
   - component: {fileID: 8838008752756790320}
+  - component: {fileID: 4970973595161115922}
   m_Layer: 12
   m_Name: Plant_1
   m_TagString: Plant
@@ -96,3 +97,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &4970973595161115922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8838008752756790323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45c8931ba45b3843833eb6db2af19db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 8838008752756790321}
+  fadeToTransparency: 0
