@@ -139,9 +139,6 @@ public class Player : MonoBehaviour
 
     }
 
-    
-
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Plant"))
@@ -173,7 +170,6 @@ public class Player : MonoBehaviour
             if (other.CompareTag("Bird"))
             {
                 gm.PlayerEaten();
-                Destroy(gameObject);
             }
         }
     }

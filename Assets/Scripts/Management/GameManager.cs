@@ -155,6 +155,7 @@ public class GameManager : MonoBehaviour
     {
         uIManager.gamePanel.SetActive(false);
         audioManager.PlaySound("Game Over");
+        Destroy(playerInst);
         if (secondChance)
         {
             GameOver();
@@ -170,13 +171,14 @@ public class GameManager : MonoBehaviour
         uIManager.adPanel.SetActive(false);
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
+
         if (score > highScore)
         {
             highScore = score;
         }
+
         Save();
         uIManager.finalScoreText.text = "Your score: " + score + "\nHigh score: " + highScore;
-
     }
 
     public void SetSound()
