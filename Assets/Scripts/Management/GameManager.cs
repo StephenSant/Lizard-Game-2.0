@@ -55,6 +55,18 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
+        PlayerPrefs.SetInt("HighScore", highScore);
+
+        int musicTemp = musicButton.isOn ? 1 : 0;
+        int soundTemp = soundButton.isOn ? 1 : 0;
+
+        PlayerPrefs.SetInt("Music", musicTemp);
+        PlayerPrefs.SetInt("Sound", soundTemp);
+
+        PlayerPrefs.Save();
+
+        #region Old Save
+        /*
         SaveData saveData = new SaveData
         {
             highScore = instance.highScore,
@@ -63,10 +75,20 @@ public class GameManager : MonoBehaviour
         };
         json = JsonUtility.ToJson(saveData);
         File.WriteAllText(Application.dataPath + saveLocation, json);
+        */
+        #endregion
     }
 
     void Load()
     {
+        highScore = PlayerPrefs.GetInt("HighScore");
+
+        musicButton.isOn = PlayerPrefs.GetInt("Music") > 0 ? true : false;
+        soundButton.isOn = PlayerPrefs.GetInt("Sound") > 0 ? true : false;
+
+
+        #region Old Load
+        /*
         if (File.Exists(Application.dataPath + saveLocation))
         {
             string saveString = File.ReadAllText(Application.dataPath + saveLocation);
@@ -75,6 +97,8 @@ public class GameManager : MonoBehaviour
             musicButton.isOn = loadedData.music;
             soundButton.isOn = loadedData.sound;
         }
+        */
+        #endregion
     }
 
     void Awake()
