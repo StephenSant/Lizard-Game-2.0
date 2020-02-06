@@ -43,6 +43,14 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
+        PlayerPrefs.SetInt("HighScore", highScore);
+        int musicTemp = music ? 1 : 0;
+        int soundTemp = sound ? 1 : 0;
+        PlayerPrefs.SetInt("Music", musicTemp);
+        PlayerPrefs.SetInt("Sound", soundTemp);
+
+        #region File Save
+        /*
         SaveData saveData = new SaveData
         {
             highScore = instance.highScore,
@@ -51,10 +59,20 @@ public class GameManager : MonoBehaviour
         };
         json = JsonUtility.ToJson(saveData);
         File.WriteAllText(Application.dataPath + "/save.txt", json);
+        */
+        #endregion
     }
 
     void Load()
     {
+        highScore = PlayerPrefs.GetInt("HighScore");
+        music = PlayerPrefs.GetInt("Music") > 0 ? true : false;
+        sound = PlayerPrefs.GetInt("Sound") > 0 ? true : false;
+        musicButton.isOn = music;
+        soundButton.isOn = sound;
+
+        #region File Load
+        /*
         if (File.Exists(Application.dataPath + "/save.txt"))
         {
             string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
@@ -65,6 +83,8 @@ public class GameManager : MonoBehaviour
             musicButton.isOn = music;
             soundButton.isOn = sound;
         }
+        */
+        #endregion
     }
 
     void Awake()
@@ -88,8 +108,8 @@ public class GameManager : MonoBehaviour
         Destroy(touchInputObject);
 #endif
 #if UNITY_IOS || UNITY_ANDROID
-        Destroy(instructions);
-#endif 
+Destroy(instructions);
+#endif
     }
 
 
