@@ -1,52 +1,52 @@
 fileFormatVersion: 2
-guid: dfc49c6caf2975641b047b96ae5bb57b
+guid: a85329b0f7c76cc40877ceb91eede110
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lizard_Idle_0
-    21300002: Lizard_Idle_1
-    21300004: Lizard_Idle_2
-    21300006: Lizard_Idle_3
-    21300008: Lizard_Idle_4
-    21300010: Lizard_Idle_5
-    21300012: Lizard_Idle_6
-    21300014: Lizard_Idle_7
-    21300016: Lizard_Idle_8
-    21300018: Lizard_Idle_9
-    21300020: Lizard_Idle_10
-    21300022: Lizard_Idle_11
-    21300024: Lizard_Idle_12
-    21300026: Lizard_Idle_13
-    21300028: Lizard_Idle_14
-    21300030: Lizard_Idle_15
-    21300032: Lizard_Idle_16
-    21300034: Lizard_Idle_17
-    21300036: Lizard_Idle_18
-    21300038: Lizard_Idle_19
-    21300040: Lizard_Idle_20
-    21300042: Lizard_Idle_21
-    21300044: Lizard_Idle_22
-    21300046: Lizard_Idle_23
-    21300048: Lizard_Idle_24
-    21300050: Lizard_Idle_25
-    21300052: Lizard_Idle_26
-    21300054: Lizard_Idle_27
-    21300056: Lizard_Idle_28
-    21300058: Lizard_Idle_29
-    21300060: Lizard_Idle_30
-    21300062: Lizard_Idle_31
-    21300064: Lizard_Idle_32
-    21300066: Lizard_Idle_33
-    21300068: Lizard_Idle_34
-    21300070: Lizard_Idle_35
-    21300072: Lizard_Idle_36
-    21300074: Lizard_Idle_37
-    21300076: Lizard_Idle_38
-    21300078: Lizard_Idle_39
-    21300080: Lizard_Idle_40
-    21300082: Lizard_Idle_41
-    21300084: Lizard_Idle_42
-    21300086: Lizard_Idle_43
-    21300088: Lizard_Idle_44
+    21300000: Lizard_Idle_NoTail_0
+    21300002: Lizard_Idle_NoTail_1
+    21300004: Lizard_Idle_NoTail_2
+    21300006: Lizard_Idle_NoTail_3
+    21300008: Lizard_Idle_NoTail_4
+    21300010: Lizard_Idle_NoTail_5
+    21300012: Lizard_Idle_NoTail_6
+    21300014: Lizard_Idle_NoTail_7
+    21300016: Lizard_Idle_NoTail_8
+    21300018: Lizard_Idle_NoTail_9
+    21300020: Lizard_Idle_NoTail_10
+    21300022: Lizard_Idle_NoTail_11
+    21300024: Lizard_Idle_NoTail_12
+    21300026: Lizard_Idle_NoTail_13
+    21300028: Lizard_Idle_NoTail_14
+    21300030: Lizard_Idle_NoTail_15
+    21300032: Lizard_Idle_NoTail_16
+    21300034: Lizard_Idle_NoTail_17
+    21300036: Lizard_Idle_NoTail_18
+    21300038: Lizard_Idle_NoTail_19
+    21300040: Lizard_Idle_NoTail_20
+    21300042: Lizard_Idle_NoTail_21
+    21300044: Lizard_Idle_NoTail_22
+    21300046: Lizard_Idle_NoTail_23
+    21300048: Lizard_Idle_NoTail_24
+    21300050: Lizard_Idle_NoTail_25
+    21300052: Lizard_Idle_NoTail_26
+    21300054: Lizard_Idle_NoTail_27
+    21300056: Lizard_Idle_NoTail_28
+    21300058: Lizard_Idle_NoTail_29
+    21300060: Lizard_Idle_NoTail_30
+    21300062: Lizard_Idle_NoTail_31
+    21300064: Lizard_Idle_NoTail_32
+    21300066: Lizard_Idle_NoTail_33
+    21300068: Lizard_Idle_NoTail_34
+    21300070: Lizard_Idle_NoTail_35
+    21300072: Lizard_Idle_NoTail_36
+    21300074: Lizard_Idle_NoTail_37
+    21300076: Lizard_Idle_NoTail_38
+    21300078: Lizard_Idle_NoTail_39
+    21300080: Lizard_Idle_NoTail_40
+    21300082: Lizard_Idle_NoTail_41
+    21300084: Lizard_Idle_NoTail_42
+    21300086: Lizard_Idle_NoTail_43
+    21300088: Lizard_Idle_NoTail_44
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -125,11 +125,22 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lizard_Idle_0
+      name: Lizard_Idle_NoTail_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,13 +154,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7035438806e254a45932f8021ee420f0
+      spriteID: 5dcfcda675ba04e4a8745c55c21126a1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_1
+      name: Lizard_Idle_NoTail_1
       rect:
         serializedVersion: 2
         x: 32
@@ -163,13 +174,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50a4f1aa53a177a46b5915084bee48f9
+      spriteID: 14dcc65ca30ee2c4a8efebcccf818bc9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_2
+      name: Lizard_Idle_NoTail_2
       rect:
         serializedVersion: 2
         x: 64
@@ -183,13 +194,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbc4c0607f2f6614f8d97d39b0be28bc
+      spriteID: 530395e7e2036a449817c764898e13c7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_3
+      name: Lizard_Idle_NoTail_3
       rect:
         serializedVersion: 2
         x: 96
@@ -203,13 +214,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56f70582bb7613d499bda1d079d846c3
+      spriteID: f9f7d2b8199022542ad7b5a1f562355d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_4
+      name: Lizard_Idle_NoTail_4
       rect:
         serializedVersion: 2
         x: 128
@@ -223,13 +234,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fbcdfd94af4e094e83899215442e73c
+      spriteID: 55c3911c159112948b13d854e5e8133a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_5
+      name: Lizard_Idle_NoTail_5
       rect:
         serializedVersion: 2
         x: 160
@@ -243,13 +254,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e18db2f7cd18d0449a19cb556adb5b77
+      spriteID: fb409c36ae97cbb4aa1312653885e596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_6
+      name: Lizard_Idle_NoTail_6
       rect:
         serializedVersion: 2
         x: 192
@@ -263,13 +274,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f5575136622f6b47a982de85caef03d
+      spriteID: e03a1feb86ae13748956800cccf9a895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_7
+      name: Lizard_Idle_NoTail_7
       rect:
         serializedVersion: 2
         x: 224
@@ -283,13 +294,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 761d9011711dea84d99c23337e2627bb
+      spriteID: d3985a17d9d658c429115e86e227e4d7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_8
+      name: Lizard_Idle_NoTail_8
       rect:
         serializedVersion: 2
         x: 256
@@ -303,13 +314,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f04f7f3a71145440b0ab5f5aa7e915b
+      spriteID: 7d40763c4f7dd2149a80edb8dffe50fd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_9
+      name: Lizard_Idle_NoTail_9
       rect:
         serializedVersion: 2
         x: 0
@@ -323,13 +334,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffb3dc9e9c7a3944e952c4107b2eabc9
+      spriteID: 73b2ba6c794497d41bd6e3a12e7213c7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_10
+      name: Lizard_Idle_NoTail_10
       rect:
         serializedVersion: 2
         x: 32
@@ -343,13 +354,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 859a4b69ee978d945896e8420d34d86b
+      spriteID: 0a5d26c0944d493469562b38308e9c98
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_11
+      name: Lizard_Idle_NoTail_11
       rect:
         serializedVersion: 2
         x: 64
@@ -363,13 +374,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38a7b72326026d847b1265247752abe3
+      spriteID: f1200c1c2df4c914387201dcb5e9f619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_12
+      name: Lizard_Idle_NoTail_12
       rect:
         serializedVersion: 2
         x: 96
@@ -383,13 +394,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 759673f45f9001f44b2b96d4d4e6dd3c
+      spriteID: 7346bbadf8a800645a03fbec5b23a5df
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_13
+      name: Lizard_Idle_NoTail_13
       rect:
         serializedVersion: 2
         x: 128
@@ -403,13 +414,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dab542a0729db6649909c49de3137f75
+      spriteID: e133f160c1d2b5e49a1559c3cf8eaa5f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_14
+      name: Lizard_Idle_NoTail_14
       rect:
         serializedVersion: 2
         x: 160
@@ -423,13 +434,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04e4ba3dfcdabb640b4c7200a9d2b5c6
+      spriteID: 9f90847a95574db4193e15c50cee985e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_15
+      name: Lizard_Idle_NoTail_15
       rect:
         serializedVersion: 2
         x: 192
@@ -443,13 +454,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74d9052228888bf4c9e522a5b64fb591
+      spriteID: 386ba987cddaebb4a8502b6d3d3642d9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_16
+      name: Lizard_Idle_NoTail_16
       rect:
         serializedVersion: 2
         x: 224
@@ -463,13 +474,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7315366df1f25e445a701ed4929eb047
+      spriteID: db6bc8d72ccc8864aaa59983e701c8ca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_17
+      name: Lizard_Idle_NoTail_17
       rect:
         serializedVersion: 2
         x: 256
@@ -483,13 +494,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e61f51de1831b144799106720a32ec94
+      spriteID: 2f55a896fbca7854290e046fc6d66e88
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_18
+      name: Lizard_Idle_NoTail_18
       rect:
         serializedVersion: 2
         x: 0
@@ -503,13 +514,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bfe072f8e25e264f9dc0ca8c3d6b1b9
+      spriteID: 91f5ba982e05d5e4ca809bea9e27bebd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_19
+      name: Lizard_Idle_NoTail_19
       rect:
         serializedVersion: 2
         x: 32
@@ -523,13 +534,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e30b534342c25504b95c998602232d68
+      spriteID: de99b85145e7121439f6a3655af1e7a4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_20
+      name: Lizard_Idle_NoTail_20
       rect:
         serializedVersion: 2
         x: 64
@@ -543,13 +554,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44f1970849166be4eb69ea6a86aec3a0
+      spriteID: 1ca3b15149b4df94cbf6a97c7fb394e0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_21
+      name: Lizard_Idle_NoTail_21
       rect:
         serializedVersion: 2
         x: 96
@@ -563,13 +574,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb26bf5c2ecee26418fb2095feb5026b
+      spriteID: 6f2cfc4c0b15e8e42b8f9534910ac66d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_22
+      name: Lizard_Idle_NoTail_22
       rect:
         serializedVersion: 2
         x: 128
@@ -583,13 +594,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed29d6246ad937143903b4712b4280d0
+      spriteID: 707560029e98b684bb085113c2276be6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_23
+      name: Lizard_Idle_NoTail_23
       rect:
         serializedVersion: 2
         x: 160
@@ -603,13 +614,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45e1f67bd68ddd4082df2dc11bd81dc
+      spriteID: 1c6cbfbabbb22a8459cbe9e283dd5dc7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_24
+      name: Lizard_Idle_NoTail_24
       rect:
         serializedVersion: 2
         x: 192
@@ -623,13 +634,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ac171a1d49d51e4394d6bc452a6927b
+      spriteID: 523468371c8dc42458455f6852aa1241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_25
+      name: Lizard_Idle_NoTail_25
       rect:
         serializedVersion: 2
         x: 224
@@ -643,13 +654,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d121c22f6de1624d9ec9c997cc030ef
+      spriteID: 578ccc9d2f369d84eb8effe2d50ad127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_26
+      name: Lizard_Idle_NoTail_26
       rect:
         serializedVersion: 2
         x: 256
@@ -663,13 +674,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bf9a5faf68f36848a438d72cb430f74
+      spriteID: d2d02087c7865604bbdf5f81d39a8dc7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_27
+      name: Lizard_Idle_NoTail_27
       rect:
         serializedVersion: 2
         x: 0
@@ -683,13 +694,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6ceec0c7b4499b4a861d12c64f3efe8
+      spriteID: b00e826ce218438449a03a989878d9c1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_28
+      name: Lizard_Idle_NoTail_28
       rect:
         serializedVersion: 2
         x: 32
@@ -703,13 +714,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f45c2ec61e53fe45a9984ec6ee9a50e
+      spriteID: c5644c1ea07817f42a41b3ebf08fae1b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_29
+      name: Lizard_Idle_NoTail_29
       rect:
         serializedVersion: 2
         x: 64
@@ -723,13 +734,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bb86db38e3ca734caf52d660c4b6068
+      spriteID: af6a0500787598f47900a37d600e4de4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_30
+      name: Lizard_Idle_NoTail_30
       rect:
         serializedVersion: 2
         x: 96
@@ -743,13 +754,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b76cb798519b8e541834ad0bbeae1162
+      spriteID: 6110a3a7b03eeda4fa9f69c4c3d04c97
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_31
+      name: Lizard_Idle_NoTail_31
       rect:
         serializedVersion: 2
         x: 128
@@ -763,13 +774,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7af3c89202d9d334ab3c1bf8f2270a4b
+      spriteID: 99cc5536149eed249aebe3baa5d6071d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_32
+      name: Lizard_Idle_NoTail_32
       rect:
         serializedVersion: 2
         x: 160
@@ -783,13 +794,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71a08319c5a82d543924703c74dc7c57
+      spriteID: c39e7e7b034f5384b8dd1822736b6907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_33
+      name: Lizard_Idle_NoTail_33
       rect:
         serializedVersion: 2
         x: 192
@@ -803,13 +814,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c3a79f88afddcd4584861989202bcbc
+      spriteID: a00223e770bcb7c4092224fd4e10655d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_34
+      name: Lizard_Idle_NoTail_34
       rect:
         serializedVersion: 2
         x: 224
@@ -823,13 +834,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074b7d00d8815a84c81fdc1e3479fba3
+      spriteID: ff2bc5cc853224241991fd1bb207de80
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_35
+      name: Lizard_Idle_NoTail_35
       rect:
         serializedVersion: 2
         x: 256
@@ -843,13 +854,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7efb6dcf8bf8c92489adfac4d70fd852
+      spriteID: 2bff13001e32c4046b18a1c5a8576908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_36
+      name: Lizard_Idle_NoTail_36
       rect:
         serializedVersion: 2
         x: 0
@@ -863,13 +874,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8fcd2a164d94024eb3ea017d23b6469
+      spriteID: 3750bc28531cebd49bf7302757e459de
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_37
+      name: Lizard_Idle_NoTail_37
       rect:
         serializedVersion: 2
         x: 32
@@ -883,13 +894,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8752585511f438f4db4d6714610ce9c7
+      spriteID: 35bc3221e1a77bb43be054ae9cc04873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_38
+      name: Lizard_Idle_NoTail_38
       rect:
         serializedVersion: 2
         x: 64
@@ -903,13 +914,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00f8781878485b34aba02394106e3d3a
+      spriteID: f5669b85d8fef9049a7db8c69479bdec
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_39
+      name: Lizard_Idle_NoTail_39
       rect:
         serializedVersion: 2
         x: 96
@@ -923,13 +934,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a46156ea740691b4fa8302b10b5c1cc2
+      spriteID: b19dbb05fa8177447a9b3847e469bd1a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_40
+      name: Lizard_Idle_NoTail_40
       rect:
         serializedVersion: 2
         x: 128
@@ -943,13 +954,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 320c95942c359d344aa0af5c9d31e5fc
+      spriteID: 48fc9c4b6a700ff47b7d2db17fd7a46e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_41
+      name: Lizard_Idle_NoTail_41
       rect:
         serializedVersion: 2
         x: 160
@@ -963,13 +974,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50a0f0993377ce6419d1d663ada03fe8
+      spriteID: 9f34e24cff45aac4d80759c7d4695629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_42
+      name: Lizard_Idle_NoTail_42
       rect:
         serializedVersion: 2
         x: 192
@@ -983,13 +994,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c42b66f742dfa14e8b9ef798f0a3bfe
+      spriteID: 6ef7aeffe1f1ad64bb283bc5c702486c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_43
+      name: Lizard_Idle_NoTail_43
       rect:
         serializedVersion: 2
         x: 224
@@ -1003,13 +1014,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cdebeaa4f5ce4e448e431bc98973467
+      spriteID: 32bed01f5d38ad747be26ab0f69e2ee3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Idle_44
+      name: Lizard_Idle_NoTail_44
       rect:
         serializedVersion: 2
         x: 256
@@ -1023,7 +1034,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6ed9c30d9715a64da287c4e5495f612
+      spriteID: 94b37d54a8bf7544795d441f747efbc6
       vertices: []
       indices: 
       edges: []
@@ -1031,7 +1042,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 398f4cb9131a1994184d42dfc58fc578
+    spriteID: dd4e87698e7af85409a216ea41c07f45
     vertices: []
     indices: 
     edges: []

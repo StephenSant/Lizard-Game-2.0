@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     GameManager gm;
     Vector2 inputAxis;
+    public bool noTail = false;
 
     public SpriteRenderer playerSprite;
     public ParticleSystem boostParticles;
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        animator.SetBool("NoTail", noTail);
+
         gm.uIManager.pointsIndicator.position = Camera.main.WorldToScreenPoint(transform.position);
 
         animator.SetFloat("Speed", inputAxis.magnitude);

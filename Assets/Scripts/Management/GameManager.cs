@@ -137,13 +137,14 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator Respawn()
     {
-        bird.GetComponent<Bird>().player = birdPoint.transform;
-        playerInst = Instantiate(playerPrefab, Vector3.forward * 0.5f, transform.rotation, null);
-        playerInst.layer = LayermaskToLayer(invulnLayer);
+        bird.GetComponent<Bird>().player = birdPoint.transform;//Send the bird offscreen
+        playerInst = Instantiate(playerPrefab, Vector3.forward * 0.5f, transform.rotation, null);//Put the player back in
+        playerInst.GetComponent<Player>().noTail = true;//Remove tail
+        playerInst.layer = LayermaskToLayer(invulnLayer);//Make him invulnable 
         yield return new WaitForSeconds(invulnTime);
-        playerInst.layer = LayermaskToLayer(playerLayer);
+        playerInst.layer = LayermaskToLayer(playerLayer);//Turn off invuln
         yield return new WaitUntil(() => (bird.transform.position - birdPoint.transform.position).magnitude <= 0.5f);
-        bird.GetComponent<Bird>().player = playerInst.transform;
+        bird.GetComponent<Bird>().player = playerInst.transform;//Send the bird back to the player
     }
 
     public static int LayermaskToLayer(LayerMask layerMask)
@@ -216,10 +217,13 @@ public class GameManager : MonoBehaviour
         Save();
     }
 }
-
+#region XML Saving
+/*
 class SaveData
 {
     public int highScore;
     public bool music;
     public bool sound;
 }
+*/
+#endregion

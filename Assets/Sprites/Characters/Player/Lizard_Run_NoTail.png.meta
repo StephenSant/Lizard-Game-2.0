@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 9aaffcea85aafb940bcc385aeb8eeae7
+guid: 00353e92ddd41a941bca29a9b05b5d06
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lizard_Run_0
-    21300002: Lizard_Run_1
-    21300004: Lizard_Run_2
-    21300006: Lizard_Run_3
-    21300008: Lizard_Run_4
-    21300010: Lizard_Run_5
-    21300012: Lizard_Run_6
-    21300014: Lizard_Run_7
+    21300000: Lizard_Run_NoTail_0
+    21300002: Lizard_Run_NoTail_1
+    21300004: Lizard_Run_NoTail_2
+    21300006: Lizard_Run_NoTail_3
+    21300008: Lizard_Run_NoTail_4
+    21300010: Lizard_Run_NoTail_5
+    21300012: Lizard_Run_NoTail_6
+    21300014: Lizard_Run_NoTail_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,11 +88,22 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lizard_Run_0
+      name: Lizard_Run_NoTail_0
       rect:
         serializedVersion: 2
         x: 0
@@ -106,13 +117,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 744d5393746a77e47bb699963195cd7f
+      spriteID: bb3006135e50daf4ba962ac67826f348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Run_1
+      name: Lizard_Run_NoTail_1
       rect:
         serializedVersion: 2
         x: 32
@@ -126,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dd28fe09751f4c4198795b3337244d3
+      spriteID: a74e08980cbaac048a6fbc9aa18d6ba6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Run_2
+      name: Lizard_Run_NoTail_2
       rect:
         serializedVersion: 2
         x: 64
@@ -146,13 +157,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 498b20a3e7b663a46a8dcb384e6a75f6
+      spriteID: 3019b2e266dadc6479cf0c08035e5ed3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Run_3
+      name: Lizard_Run_NoTail_3
       rect:
         serializedVersion: 2
         x: 96
@@ -166,13 +177,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4b8928f60530f640a3b6b0744dfc813
+      spriteID: 3aa10bb2d3bb49a4ebf67c17e31b007c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Run_4
+      name: Lizard_Run_NoTail_4
       rect:
         serializedVersion: 2
         x: 0
@@ -186,13 +197,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab0b3a9d222ddda4db28f01459d6771b
+      spriteID: a2cdfe488b41041489457b48b47a2d91
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Run_5
+      name: Lizard_Run_NoTail_5
       rect:
         serializedVersion: 2
         x: 32
@@ -206,13 +217,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a5e88a5c4c09dc4896a097d281373e7
+      spriteID: a03ad3189d8203c4e9cf4e134c734225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Run_6
+      name: Lizard_Run_NoTail_6
       rect:
         serializedVersion: 2
         x: 64
@@ -226,13 +237,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4358e2c685d86a44185b4cae5cfa8089
+      spriteID: 6a39cad147d7cfc4498cabaf34753471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lizard_Run_7
+      name: Lizard_Run_NoTail_7
       rect:
         serializedVersion: 2
         x: 96
@@ -246,7 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11b02dd08183ab845a902e5779a606ef
+      spriteID: 10cc76a846b5a0b468d01dff2215347f
       vertices: []
       indices: 
       edges: []
@@ -254,7 +265,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: baa90c1612f585546b857ee1df398ac7
+    spriteID: 6d3830c0b78bf9c41a01bedc5a483fad
     vertices: []
     indices: 
     edges: []
