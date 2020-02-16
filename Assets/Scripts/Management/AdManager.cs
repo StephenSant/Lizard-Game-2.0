@@ -25,6 +25,11 @@ public class AdManager : MonoBehaviour
         else
         {
             Debug.Log("Ad loading...");
+            if (testMode)
+            {
+                GetComponent<GameManager>().StartCoroutine("Respawn");
+                Debug.Log("Test mode active: ad skipped.");
+            }
         }
     }
     public void PlayAd()

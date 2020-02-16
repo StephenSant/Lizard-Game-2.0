@@ -3001,7 +3001,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 445ae8a643beccc4089bcf368f906ecd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4057,7 +4057,6 @@ MonoBehaviour:
   verticalInput: 0
   horizontalInput: 0
   touchInputs: {fileID: 1382181899}
-  saveLocation: /SaveData.txt
   playerInst: {fileID: 579995331}
   playerPrefab: {fileID: 2445901979189967779, guid: 73cbc55f4a604d94ab38062bcee2f1c6,
     type: 3}

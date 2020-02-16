@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
     public float horizontalInput;
     public TouchInputs touchInputs;
 
-    [Header("Saving")]
-    public string saveLocation = "/SaveData.txt";
-    string json;
+    //[Header("Saving")]
+    //public string saveLocation = "/SaveData.txt";
+    //string json;
 
     [Header("Player")]
     public GameObject playerInst;
@@ -137,7 +137,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator Respawn()
     {
-        uIManager.adPanel.SetActive(false);
+        uIManager.adPanel.SetActive(false);//If respawning then close that panel
+        uIManager.gamePanel.SetActive(true);//turn back on the game panel
         bird.GetComponent<Bird>().player = birdPoint.transform;//Send the bird offscreen
         playerInst = Instantiate(playerPrefab, Vector3.forward * 0.5f, transform.rotation, null);//Put the player back in
         playerInst.GetComponent<Player>().noTail = true;//Remove tail
