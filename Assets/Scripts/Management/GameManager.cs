@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator Respawn()
     {
+        uIManager.adPanel.SetActive(false);
         bird.GetComponent<Bird>().player = birdPoint.transform;//Send the bird offscreen
         playerInst = Instantiate(playerPrefab, Vector3.forward * 0.5f, transform.rotation, null);//Put the player back in
         playerInst.GetComponent<Player>().noTail = true;//Remove tail
@@ -187,16 +188,16 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            secondChance = true;
             uIManager.adPanel.SetActive(true);
         }
     }
 
     public void GameOver()
     {
-        uIManager.adPanel.SetActive(false);
         gameOver = true;
         uIManager.OpenGameOverPanel(true);
-
+        uIManager.adPanel.SetActive(false);
         if (score > highScore)
         {
             highScore = score;

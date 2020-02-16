@@ -1,26 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class AdManager : MonoBehaviour
 {
-    GameManager gm;
+    [SerializeField] bool testMode = false;
+    [SerializeField] string gameId = "";
+    [SerializeField] string adPlacementId;
 
     void Start()
     {
-        gm = GameManager.instance;
+        Advertisement.Initialize(gameId, testMode);
     }
-
+    public void ShowAd(Action<ShowResult> callback)
+    {
+        if (Advertisement.IsReady(adPlacementId))
+        {
+            ShowOptions so = new ShowOptions();
+            so.resultCallback = callback;
+            Advertisement.Show(adPlacementId, so);
+        }
+        else
+        {
+            Debug.Log("Ad loading...");
+        }
+    }
     public void PlayAd()
     {
-        OnAdComplete();
+        GameManager.instance.adManager.ShowAd(OnAdClosed);
     }
 
-    void OnAdComplete()
+    void OnAdClosed(ShowResult result)
     {
-        gm.secondChance = true;
-        StartCoroutine(gm.Respawn());
-        gm.uIManager.adPanel.SetActive(false);
-        gm.uIManager.gamePanel.SetActive(true);
+        switch (result)
+        {
+            case ShowResult.Finished:
+                GetComponent<GameManager>().StartCoroutine("Respawn");
+                Debug.Log("Ad completed!");
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("Ad skipped!");
+                break;
+            case ShowResult.Failed:
+                Debug.LogError("Ad failed!");
+                break;
+        }
     }
 }

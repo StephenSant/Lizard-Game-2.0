@@ -4053,7 +4053,7 @@ MonoBehaviour:
   environmentGenerator: {fileID: 1382181896}
   bugSpawner: {fileID: 1382181897}
   audioManager: {fileID: 1382181903}
-  adManager: {fileID: 0}
+  adManager: {fileID: 1382181901}
   verticalInput: 0
   horizontalInput: 0
   touchInputs: {fileID: 1382181899}
@@ -4220,6 +4220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65984bc4605b56d4a882fd3c7aa98821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testMode: 1
+  gameId: 3379381
+  adPlacementId: rewardedVideo
 --- !u!114 &1382181903
 MonoBehaviour:
   m_ObjectHideFlags: 0
