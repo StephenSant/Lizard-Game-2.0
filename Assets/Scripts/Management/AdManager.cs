@@ -12,6 +12,7 @@ public class AdManager : MonoBehaviour
 
     void Start()
     {
+        testMode = Advertisement.testMode;
         Advertisement.Initialize(gameId, testMode);
     }
     public void ShowAd(Action<ShowResult> callback)
