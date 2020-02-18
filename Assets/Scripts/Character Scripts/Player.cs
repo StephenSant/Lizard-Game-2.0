@@ -25,10 +25,22 @@ public class Player : MonoBehaviour
     {
         curBoost = maxBoost;
         gm = GameManager.instance;
+        gm.audioManager.PlayTrack("Clip1");
+        //gm.audioManager.PlayTrack("Clip2");
+        //gm.audioManager.PlayTrack("Clip3");
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            gm.audioManager.FadeOutMusic("Clip2");
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            gm.audioManager.FadeInMusic("Clip2");
+        }
+
         animator.SetBool("NoTail", noTail);
 
         gm.uIManager.pointsIndicator.position = Camera.main.WorldToScreenPoint(transform.position);

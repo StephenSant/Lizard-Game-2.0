@@ -4260,6 +4260,26 @@ MonoBehaviour:
     volume: 1
     pitch: 2
     source: {fileID: 0}
+  tracks:
+  - name: Clip1
+    clip: {fileID: 8300000, guid: b6bd69178d9a2bb4189c72792dfc9b54, type: 3}
+    loop: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Clip2
+    clip: {fileID: 8300000, guid: 16af0c0b5704a3e46b9e8b02ef18e086, type: 3}
+    loop: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Clip3
+    clip: {fileID: 8300000, guid: 90083e0ab58de384ebaa379a246c9483, type: 3}
+    loop: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  musicFadeTime: 1
 --- !u!1 &1424434432
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,6 +5471,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1382181894}
+        m_MethodName: SetMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
