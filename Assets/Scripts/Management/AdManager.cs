@@ -6,14 +6,12 @@ using UnityEngine.Advertisements;
 
 public class AdManager : MonoBehaviour
 {
-    [SerializeField] bool testMode = false;
     [SerializeField] string gameId = "";
     [SerializeField] string adPlacementId;
 
     void Start()
     {
-        testMode = Advertisement.testMode;
-        Advertisement.Initialize(gameId, testMode);
+        Advertisement.Initialize(gameId, false);
     }
     public void ShowAd(Action<ShowResult> callback)
     {
@@ -26,11 +24,6 @@ public class AdManager : MonoBehaviour
         else
         {
             Debug.Log("Ad loading...");
-            if (testMode)
-            {
-                GetComponent<GameManager>().StartCoroutine("Respawn");
-                Debug.Log("Test mode active: ad skipped.");
-            }
         }
     }
     public void PlayAd()
