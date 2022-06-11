@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 2;
+    public float moveSpeed = 5;
     public float boostMultiplier = 2;
     Vector2 keptDirection;
     public float maxBoost;
